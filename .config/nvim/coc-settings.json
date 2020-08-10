@@ -1,0 +1,74 @@
+{
+  // suggestions
+  // "suggest.echodocSupport": true,
+  // TODO add more labels and give them cool glyphs
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": ""
+  },
+
+  //"codeLens.enable": true,
+  "diagnostic.errorSign": "\uf05e",
+  "diagnostic.warningSign": "\uf071",
+  "diagnostic.infoSign": "\uf129",
+  "diagnostic.hintSign": " ",
+  "diagnostic.virtualText": true,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.enableMessage": "always",
+  "diagnostic.messageTarget": "echo",
+
+  // list
+  "list.indicator": "",
+  "list.selectedSignText": " ",
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json"
+    //  "python"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+
+  // explorer
+  //"explorer.width": 31,
+  //"explorer.quitOnOpen": true,
+  //"explorer.icon.enableNerdfont": true,
+  //"explorer.previewAction.onHover": false,
+  //"explorer.icon.enableVimDevicons": false,
+  //"explorer.keyMappings": {
+  //"<cr>": ["expandable?", "expand", "open"],
+  //"v": "open:vsplit",
+  //"cd": "cd",
+  //"gp": "gotoParent",
+  //"gP": "preview:labeling"
+  //},
+
+  // snippets
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snips"],
+  //"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+
+  // emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}

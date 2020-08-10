@@ -1,0 +1,55 @@
+#ALIASES
+
+# Aliases for software managment
+# pacman or pm
+alias pacman='sudo pacman --color auto'
+alias Pupdate='sudo pacman -Syu'
+alias Pinstall='sudo pacman -S'
+
+# yay as aur helper - updates everything
+alias update="yay -Syu"
+alias install="yay -S"
+alias remove='yay -Rns'
+
+#Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+# Mirror Update to latest top 200 mirrors
+alias mirror-update='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+
+
+# Containers
+# docker
+alias dstart='sudo systemctl start docker'
+alias dstop='sudo systemctl stop docker'
+
+# lxd
+alias lstart='sudo systemctl start lxd'
+alias lstop='sudo systemctl stop lxd'
+
+
+# Bootloader
+# systemd-boot update
+alias boot-up="sudo bootctl update"
+
+# Grub Update
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+# Generate initramfs
+alias initramfs-gen='sudo mkinitcpio -p linux'
+
+# Remove file and directory with sudo
+alias rem='sudo rm'
+alias remd='sudo rm -r'
+
+# Copy file and directory with sudo
+alias copy='sudo cp'
+alias copyd='sudo cp -r'
+
+# Mount phone's partition using FTP
+alias fconnect='curlftpfs ftp://192.168.43.1:9999 /mnt/ftpfs/'
+# Unmount partition
+alias fdiscon='sudo umount /mnt/ftpfs'
+
+# Android Studio
+alias android-studio='/opt/android-studio/bin/studio.sh'

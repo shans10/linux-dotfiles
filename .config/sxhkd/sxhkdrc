@@ -1,0 +1,108 @@
+############################################################ FOR WINDOW MANAGERS OTHER THAN BSPWM ######################################################################
+
+##################################################################### Application Shortcuts #########################################################################
+
+# Make sxhkd reload its configuration files
+super + alt + k
+    pkill -USR1 -x sxhkd
+
+# Rofi Powermenu
+super + Escape
+    ~/.config/rofi/bin/powermenu
+
+#
+# PULSEAUDIO CONTROLS
+#
+
+# Volume Up
+XF86AudioRaiseVolume
+    ~/.bin/audio up
+
+# Volume Down
+XF86AudioLowerVolume
+    ~/.bin/audio down
+
+# Toggle Mute
+XF86AudioMute
+    ~/.bin/audio mute
+
+# Toggle Mic
+XF86AudioMicMute
+    ~/.bin/audio mic
+
+#
+# BRIGHTNESS CONTROL
+#
+
+# Brightness Up
+XF86MonBrightnessUp
+    ~/.bin/brightness up
+
+# Brightness Up
+XF86MonBrightnessDown
+    ~/.bin/brightness down
+
+#
+# TERMINAL EMULATORS
+#
+
+# st
+super + grave
+    st
+
+# alacritty
+alt + grave
+    alacritty
+
+#
+# IDE/TEXT EDITORS
+#
+
+# Android Studio
+super + a
+    android-studio
+
+# VS Code
+super + shift + v
+    code
+
+#
+# MULTIMEDIA
+#
+
+# Spotify
+super + shift + s
+    spotify
+
+# Discord
+super + shift + d
+    discord
+
+# Gimp
+super + shift + g
+    gimp
+
+#
+# SCREENSHOT
+#
+
+# custom screenshot script using rofi
+Print
+    /home/shan/.config/rofi/bin/screenshot
+
+# Rofi-screenshot menu
+super + Print
+    rofi-screenshot
+
+# rofi-screenshot stop recording
+super + shift + Print
+    rofi-screenshot -s
+
+#
+# TOUCHPAD TOGGLE
+#
+
+ctrl + alt + t
+    ~/.bin/touchpadToggle
+
+########################################################################### EOF  #####################################################################################

@@ -1,0 +1,114 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    "modules-center": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/window"],
+    "modules-right": ["backlight",  "pulseaudio", "network", "battery", "clock", "tray"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "❰<span color=\"#ebdbb2\"> {name} </span>❱",  
+        "format-icons": {
+            "1:web": "www",
+            "2:code": "",
+            "3:term": "",
+            "4:work": "",
+            "5:music": "",
+            "6:docs": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+	
+    "sway/window": {
+    "max-length": 50
+},
+	
+    "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}%  {icon}",
+    "format-icons": ["ﯦ"]
+},
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+    "clock": {
+        // Human Friendly
+        "format": "  {:%I:%M %p}",
+        // 24hr Robot Friendly
+        "format-alt": "  {:%A, %B %d}",
+        "on-click-right": "gnome-calendar"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "termite -t 'Floating Terminal' -e htop"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.1f}/{total:0.1f}G <span font='Iosevka Nerd Font 13'></span>"
+    },
+    
+       "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "<span font='Iosevka Nerd Font'> </span> {capacity}%",
+        "format-full":  "<span font='Iosevka Nerd Font'></span> {capacity}% - Charged",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "gnome-power-statistics"
+    },
+
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "{ifname}: {ipaddr} ",
+        "format-disconnected": "睊  Disconnected",
+        "on-click": "gnome-control-center wifi"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "<span font='Iosevka Nerd Font 11'>{icon}</span>  {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "<span font='Iosevka Nerd Font 15'>ﱝ</span>",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "gnome-control-center sound"
+    },
+    "custom/music": {
+    "format": "  {}",
+    "max-length": 60,
+    "interval": 5, // Remove this if your script is endless and write in loop
+    "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+	"tooltip": false,
+	"on-click": "playerctl play-pause",
+	"on-scroll-up": "playerctl previous",
+	"on-scroll-down": "playerctl next"
+    }
+}
