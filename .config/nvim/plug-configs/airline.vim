@@ -12,7 +12,7 @@ let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 1
 
 """ Tabline Settings
-let g:airline#extensions#tabline#enabled = 1             " Enable Tabline
+let g:airline#extensions#tabline#enabled = 0             " Enable Tabline
 let g:airline#extensions#tabline#show_close_button = 0   " Disable Close Button
 " let g:airline#extensions#tabline#show_tab_type = 0     " Show buffers/tabs label
 
@@ -65,7 +65,7 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:airline_section_z = '%3p%%  | %l  : %-2v'
 
 "" Colors
-autocmd VimEnter * hi airline_tablabel_right guifg=#1d2021 guibg=#fe8019
+" autocmd VimEnter * hi airline_tablabel_right guifg=#1d2021 guibg=#fe8019
 " autocmd VimEnter * hi airline_tabmod guifg=#1d2021 guibg=#fe8019
 
 "" Mode Map

@@ -21,8 +21,8 @@ Plug 'unblevable/quick-scope'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm',           { 'on': [ 'FloatermToggle', 'FloatermNew' ] }
-" Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRefresh' ] }
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRefresh' ] }
+" Plug 'itchyny/lightline.vim'
 " Plug 'taohexxx/lightline-buffer'
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'morhetz/gruvbox'
@@ -56,8 +56,8 @@ source ~/.config/nvim/plug-configs/fzf.vim                          " fzf
 source ~/.config/nvim/plug-configs/rnvimr.vim                       " rnvimr(ranger fm in vim)
 source ~/.config/nvim/plug-configs/floaterm.vim                     " floaterm
 source ~/.config/nvim/plug-configs/coc.vim                          " coc
-" source ~/.config/nvim/plug-configs/airline.vim                      " airline
-source ~/.config/nvim/plug-configs/lightline.vim                    " lightline
+source ~/.config/nvim/plug-configs/airline.vim                      " airline
+" source ~/.config/nvim/plug-configs/lightline.vim                    " lightline
 source ~/.config/nvim/plug-configs/nerdtree.vim                     " NERDTree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
