@@ -127,15 +127,17 @@ nnoremap <silent> <space>ld  :<C-u>CocList diagnostics<cr>
 "" Manage extensions.
 nnoremap <silent> <space>le  :<C-u>CocList extensions<cr>
 "" Show commands.
-nnoremap <silent> <space>lc  :<C-u>CocList commands<cr>
+" nnoremap <silent> <space>lc  :<C-u>CocList commands<cr>
 "" Show yanks.
 nnoremap <silent> <space>ly  :<C-u>CocList yank<cr>
 "" Show files.
-nnoremap <silent> <space>lf  :<C-u>CocList files<cr>
+" nnoremap <silent> <space>lf  :<C-u>CocList files<cr>
 "" Show files.
 nnoremap <silent> <space>lw  :<C-u>CocList words<cr>
 "" Show files.
 nnoremap <silent> <space>lt  :<C-u>CocList floaterm<cr>
+"" Show files.
+" nnoremap <silent> <space>lb  :<C-u>CocList buffers<cr>
 
 """ Codelens
 nmap <silent> <leader>cl :CocAction codelens<CR>
@@ -179,3 +181,4 @@ let g:coc_snippet_prev = '<c-k>'
 
 "" Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
