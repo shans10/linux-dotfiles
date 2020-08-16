@@ -3,10 +3,10 @@
 """ SOURCE FILES
 
 """ Plugins
-source ~/AppData/Local/nvim/plugins.vim
+source C:/Users/shant/AppData/Local/nvim/plugins.vim
 
 """ Personal Keybindings
-source ~/AppData/Local/nvim/keybindings.vim
+source C:/Users/shant/AppData/Local/nvim/keybindings.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -32,7 +32,7 @@ set termguicolors
 colorscheme gruvbox
 
 """ Bold Highlights
-source ~/AppData/Local/nvim/bold-highlights.vim
+source C:/Users/shant/AppData/Local/nvim/bold-highlights.vim
 
 " Signify Symbols Colors
 highlight SignifySignAdd    ctermfg=green   guifg=#b8bb26 cterm=NONE gui=bold
@@ -97,7 +97,7 @@ map <Space> <Leader>
 set noswapfile
 set nobackup
 set nowritebackup
-set undodir=~/AppData/Local/nvim/undodir
+set undodir=C:/Users/shant/AppData/Local/nvim/undodir
 set undofile
 
 """ Indentation

@@ -1,13 +1,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " Plugins " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " auto-install vim-plug
-if empty(glob('~/AppData/Local/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/AppData/Local/nvim/autoload/plug.vim --create-dirs
+if empty(glob('C:/Users/shant/AppData/Local/nvim/autoload/plug.vim'))
+  silent !curl -fLo C:/Users/shant/AppData/Local/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('C:/Users/shant/AppData/Local/nvim/plugged')
 Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'Yggdroot/LeaderF',                { 'do': '.\install.bat' }
@@ -37,19 +37,19 @@ autocmd VimEnter *
 
 """ Sourcing the plugins configuration files
 
-source ~/AppData/Local/nvim/plug-configs/startify.vim                     " startify
-source ~/AppData/Local/nvim/plug-configs/vim-commentary.vim               " vim-commentary
-source ~/AppData/Local/nvim/plug-configs/LeaderF.vim                      " LeaderF
-source ~/AppData/Local/nvim/plug-configs/suda.vim                         " suda
-source ~/AppData/Local/nvim/plug-configs/signify.vim                      " signify
-source ~/AppData/Local/nvim/plug-configs/high-yank.vim                    " highlighted-yank
-source ~/AppData/Local/nvim/plug-configs/undotree.vim                     " undotree
-source ~/AppData/Local/nvim/plug-configs/gruvbox.vim                      " gruvbox
-source ~/AppData/Local/nvim/plug-configs/quickscope.vim                   " quickscope
-source ~/AppData/Local/nvim/plug-configs/sneak.vim                        " sneak
-source ~/AppData/Local/nvim/plug-configs/floaterm.vim                     " floaterm
-source ~/AppData/Local/nvim/plug-configs/coc.vim                          " coc
-source ~/AppData/Local/nvim/plug-configs/airline.vim                      " airline
-source ~/AppData/Local/nvim/plug-configs/nerdtree.vim                     " NERDTree
+source C:/Users/shant/AppData/Local/nvim/plug-configs/startify.vim                     " startify
+source C:/Users/shant/AppData/Local/nvim/plug-configs/vim-commentary.vim               " vim-commentary
+source C:/Users/shant/AppData/Local/nvim/plug-configs/LeaderF.vim                      " LeaderF
+source C:/Users/shant/AppData/Local/nvim/plug-configs/suda.vim                         " suda
+source C:/Users/shant/AppData/Local/nvim/plug-configs/signify.vim                      " signify
+source C:/Users/shant/AppData/Local/nvim/plug-configs/high-yank.vim                    " highlighted-yank
+source C:/Users/shant/AppData/Local/nvim/plug-configs/undotree.vim                     " undotree
+source C:/Users/shant/AppData/Local/nvim/plug-configs/gruvbox.vim                      " gruvbox
+source C:/Users/shant/AppData/Local/nvim/plug-configs/quickscope.vim                   " quickscope
+source C:/Users/shant/AppData/Local/nvim/plug-configs/sneak.vim                        " sneak
+source C:/Users/shant/AppData/Local/nvim/plug-configs/floaterm.vim                     " floaterm
+source C:/Users/shant/AppData/Local/nvim/plug-configs/coc.vim                          " coc
+source C:/Users/shant/AppData/Local/nvim/plug-configs/airline.vim                      " airline
+source C:/Users/shant/AppData/Local/nvim/plug-configs/nerdtree.vim                     " NERDTree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
