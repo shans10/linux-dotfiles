@@ -68,6 +68,12 @@ alias android-studio='/opt/android-studio/bin/studio.sh'
 # Locale
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+# Set Locale on Fedora
+#if test -r /etc/locale.conf
+#    while read -l kv
+#        set -gx (string split "=" -- $kv)
+#    end </etc/locale.conf
+#end
 
 # CS50
 # configure clang
