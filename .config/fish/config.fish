@@ -96,3 +96,16 @@ if status --is-login
     exec startx -- -keeptty
   end
 end
+
+# Setting Locale for Fedora on WSL
+# if test -r /etc/locale.conf
+#     while read -l kv
+#         set -gx (string split "=" -- $kv)
+#     end </etc/locale.conf
+# end
+
+# Setting Display Variable for WSL
+# if uname -r | grep 'microsoft' > /dev/null
+#   set -l LOCAL_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+#   set -xg DISPLAY $LOCAL_IP:0
+# end
