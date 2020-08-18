@@ -17,11 +17,11 @@ map <leader>fz :FZF<CR>
 map <leader>b :Buffers<CR>
 map <leader>ll :Lines<CR>
 map <leader>lb :BLines<CR>
-nnoremap <leader>ag :Ag<CR>
+" nnoremap <leader>ag :Ag<CR>
 nnoremap <leader>rg :Rg<CR>
-nnoremap <silent> <Leader>ac :Ag <C-R><C-W><CR>
+" nnoremap <silent> <Leader>ac :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>rc :Rg <C-R><C-W><CR>
-nnoremap <leader>h :History:<CR>
+nnoremap <leader>fh :History:<CR>
 " nnoremap <leader>t :Tags<CR>
 " nnoremap <leader>m :Marks<CR>
 

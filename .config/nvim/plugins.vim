@@ -10,7 +10,8 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
-Plug 'Yggdroot/LeaderF',                { 'do': './install.sh' }
+Plug 'junegunn/fzf',                    { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim',
 Plug 'lambdalisue/suda.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
@@ -40,7 +41,7 @@ autocmd VimEnter *
 
 source ~/.config/nvim/plug-configs/startify.vim                     " startify
 source ~/.config/nvim/plug-configs/vim-commentary.vim               " vim-commentary
-source ~/.config/nvim/plug-configs/LeaderF.vim                      " LeaderF
+source ~/.config/nvim/plug-configs/fzf.vim                          " fzf
 source ~/.config/nvim/plug-configs/suda.vim                         " suda
 source ~/.config/nvim/plug-configs/signify.vim                      " signify
 source ~/.config/nvim/plug-configs/hexokinase.vim                   " hexokinase

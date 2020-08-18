@@ -55,8 +55,8 @@ let g:airline#extensions#disable_rtp_load = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
-let airline#extensions#coc#warning_symbol = "\uf071 "
-let airline#extensions#coc#error_symbol = "\uf05e "
+" let airline#extensions#coc#warning_symbol = "\uf071 "
+" let airline#extensions#coc#error_symbol = "\uf05e "
 
 "" General Appearance Tweaks
 let g:webdevicons_enable_airline_tabline = 1
