@@ -62,18 +62,11 @@ alias fconnect='curlftpfs ftp://192.168.43.1:9999 /mnt/ftpfs/'
 # Unmount partition
 alias fdiscon='sudo umount /mnt/ftpfs'
 
-# Android Studio
-alias android-studio='/opt/android-studio/bin/studio.sh'
 
 # Locale
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-# Set Locale on Fedora
-#if test -r /etc/locale.conf
-#    while read -l kv
-#        set -gx (string split "=" -- $kv)
-#    end </etc/locale.conf
-#end
+
 
 # CS50
 # configure clang
@@ -81,14 +74,18 @@ export CC="clang"
 export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
 export LDLIBS="-lcrypt -lcs50 -lm"
 
+
 # 256 colors
 export TERM="st-256color"
+
 
 # QT Platform
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+
 # Firefox Precision Scrolling
 export MOZ_USE_XINPUT2=1
+
 
 # Start X at login
 if status --is-login
@@ -97,12 +94,14 @@ if status --is-login
   end
 end
 
+
 # Setting Locale for Fedora on WSL
 # if test -r /etc/locale.conf
 #     while read -l kv
 #         set -gx (string split "=" -- $kv)
 #     end </etc/locale.conf
 # end
+
 
 # Setting Display Variable for WSL
 # if uname -r | grep 'microsoft' > /dev/null
