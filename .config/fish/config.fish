@@ -63,7 +63,7 @@ alias fconnect='curlftpfs ftp://192.168.43.1:9999 /mnt/ftpfs/'
 alias fdiscon='sudo umount /mnt/ftpfs'
 
 
-# Locale
+# Set Locale
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
@@ -93,14 +93,6 @@ if status --is-login
     exec startx -- -keeptty
   end
 end
-
-
-# Setting Locale for Fedora on WSL
-# if test -r /etc/locale.conf
-#     while read -l kv
-#         set -gx (string split "=" -- $kv)
-#     end </etc/locale.conf
-# end
 
 
 # Setting Display Variable for WSL
