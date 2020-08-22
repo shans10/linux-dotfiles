@@ -30,10 +30,10 @@ noremap <Leader>fb :<C-U><C-R>=printf("Leaderf! rg -F --current-buffer -e %s ", 
 noremap <Leader>fa :<C-U><C-R>=printf("Leaderf! rg -F --all-buffers -e %s ", expand("<cword>"))<CR>
 
 " search visually selected text literally, don't quit LeaderF after accepting an entry
-xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen -e %s ", leaderf#Rg#visual())<CR>
+xnoremap <leader>ff :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen -e %s ", leaderf#Rg#visual())<CR>
 
 " recall last search. If the result window is closed, reopen it.
-noremap go :<C-U>Leaderf! rg --recall<CR>
+noremap <leader>fh :<C-U>Leaderf! rg --recall<CR>
 
 
 " search word under cursor in *.h and *.cpp files.

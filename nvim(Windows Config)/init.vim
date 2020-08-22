@@ -12,11 +12,11 @@ source C:/Users/shant/AppData/Local/nvim/keybindings.vim
 
 """ SETTINGS
 """ Provider Settings
-" let g:loaded_python_provider = 0   " Disable python2 support
+let g:loaded_python_provider = 0   " Disable python2 support
 " let g:python_host_prog  = '/usr/bin/python'
-" let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = 'C:/Python38/python.exe'
 let g:loaded_ruby_provider = 0     " Disable ruby support
-" let g:loaded_node_provider = 0     " Disable nodejs support
+let g:loaded_node_provider = 0     " Disable nodejs support
 
 """ Encoding
 set encoding=utf-8
