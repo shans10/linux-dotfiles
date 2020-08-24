@@ -70,7 +70,5 @@
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     }
-  },
-
-  "lua.commandPath": "C:/ProgramData/chocolatey/lib/luarocks/luarocks-2.4.4-win32/systree/bin/lua-lsp.bat"
+  }
 }

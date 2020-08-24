@@ -21,6 +21,8 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-marketplace',
     \ 'coc-clangd',
+    \ 'coc-lua',
+    \ 'coc-rls',
     \ ]
 
 """ Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
@@ -181,4 +183,3 @@ let g:coc_snippet_prev = '<c-k>'
 
 "" Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-
