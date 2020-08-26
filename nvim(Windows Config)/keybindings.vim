@@ -1,9 +1,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  " Personal Keybindings " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Term
-nmap <M-t> :15new term://cmd<CR>
-imap <M-t> :15new term://cmd<CR>
-tmap <M-t> :15new term://cmd<CR>
+"" Split
+nmap <M-t> :15new term://powershell -nologo<CR>
+imap <M-t> :15new term://powershell -nologo<CR>
+tmap <M-t> :15new term://powershell -nologo<CR>
+
+"" Full
+nmap <M-S-t> :term=powershell -nologo<CR>
+imap <M-S-t> :term=powershell -nologo<CR>
+tmap <M-S-t> :term=powershell -nologo<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -45,10 +51,12 @@ map <Leader>tv <C-w>t<C-w>K
 imap <M-q> <esc>:q<CR>
 nmap <M-q> :q<CR>
 tmap <M-q> <esc>:q<CR>
+
 """ Quit Without Saving
 imap <M-S-q> <esc>:q!<CR>
 nmap <M-S-q> :q!<CR>
 tmap <M-S-q> <esc>:q!<CR>
+
 """ Save and Quit
 imap <M-w> <esc>:wq<CR>
 nmap <M-w> :wq<CR>
@@ -65,6 +73,7 @@ map <leader>i gg=G
 """ Redo
 imap <C-r> <esc><C-r>
 tmap <C-r> <esc><C-r>
+
 """ Undo
 imap <C-z> <esc>u<cr>
 tmap <C-z> <esc>u<cr>
@@ -274,7 +283,12 @@ nmap <M-f> <C-f><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""" Source Config
+nnoremap <leader>so :so %<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 """ Love2d
-nnoremap <leader>lo :!love .<CR>
+nnoremap <leader>lo :!love . &<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

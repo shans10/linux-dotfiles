@@ -12,7 +12,7 @@ let g:ascii = [
             \]
 
 let g:startify_custom_header = g:ascii
-let g:startify_session_dir = '~/.config/nvim/sessions'
+let g:startify_session_dir = 'C:/Users/shant/AppData/Local/nvim/sessions'
 
 let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']                     },
@@ -35,11 +35,12 @@ function! StartifyEntryFormat()
     endfunction
 
 let g:startify_bookmarks = [
-            \ { 'p': '~/.config/nvim/plugins.vim' },
-            \ { 'i': '~/.config/nvim/init.vim' },
-            \ { 'P': '/mnt/Stuff/Programming' },
-            \ { 'o': '/mnt/Stuff/OSP' },
-            \ { 'n': '/mnt/Stuff/OSP/neovim' },
+            \ { 'p': 'C:/Users/shant/AppData/Local/nvim/plugins.vim' },
+            \ { 'i': 'C:/Users/shant/AppData/Local/nvim/init.vim' },
+            \ { 'c': 'C:/Users/shant/AppData/Local/nvim/plug-configs' },
+            \ { 'x': 'D:/Programming/CS50X' },
+            \ { 'a': 'D:/Programming/Algorithms' },
+            \ { 'P': 'D:/Programming/Python' },
             \ ]
 
 let g:startify_enable_special = 0

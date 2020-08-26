@@ -12,7 +12,7 @@ let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 1
 
 """ Tabline Settings
-let g:airline#extensions#tabline#enabled = 0             " Enable Tabline
+let g:airline#extensions#tabline#enabled = 1             " Enable Tabline
 let g:airline#extensions#tabline#show_close_button = 0   " Disable Close Button
 " let g:airline#extensions#tabline#show_tab_type = 0     " Show buffers/tabs label
 
@@ -24,12 +24,14 @@ let g:airline#extensions#tabline#right_sep = ''
 
 "" Tabs
 let g:airline#extensions#tabline#show_splits = 0
-"let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_nr = 0
-" let g:airline#extensions#tabline#tab_nr_type = 1   " Show Tab Number
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type = 1   " Show Tab Number
 " let g:airline#extensions#tabline#tabs_label = 't'
+let g:airline#extensions#tabline#tab_min_count = 2
 
 "" Buffers
+let g:airline#extensions#tabline#show_buffers = 0
 "let g:airline#extensions#tabline#buf_label_first = 1
 " let g:airline#extensions#tabline#buffers_label = 'b'
 " let airline#extensions#tabline#current_first = 1
