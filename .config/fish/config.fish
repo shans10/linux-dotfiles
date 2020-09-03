@@ -6,6 +6,34 @@ function fish_user_key_bindings
   bind \cc 'echo; commandline | cat; commandline ""; commandline -f repaint'
 end
 
+
+# Bash Style Command Substitution and Chaining
+# Bang Bang(Previous Command)
+function bind_bang
+  switch (commandline -t)
+  case "!"
+    commandline -t $history[1]; commandline -f repaint
+  case "*"
+    commandline -i !
+  end
+end
+#(Last Argument of previous command)
+function bind_dollar
+  switch (commandline -t)
+  case "!"
+    commandline -t ""
+    commandline -f history-token-search-backward
+  case "*"
+    commandline -i '$'
+  end
+end
+# Setting the bindings
+function fish_user_key_bindings
+  bind ! bind_bang
+  bind '$' bind_dollar
+end
+
+
 #ALIASES
 
 # Aliases for software managment
