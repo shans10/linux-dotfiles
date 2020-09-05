@@ -27,10 +27,10 @@
 ;; `load-theme' function. This is the default:
 ; (setq doom-theme 'doom-monokai-pro)
 (if (not (display-graphic-p))
-      (load-theme 'doom-monokai-pro t)
-  (load-theme 'doom-gruvbox t)
+      (setq doom-theme 'doom-monokai-pro)
+  (setq doom-theme 'doom-gruvbox)
+  (setq doom-gruvbox-dark-variant "hard")
   )
-(setq doom-gruvbox-dark-variant "hard")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
