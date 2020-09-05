@@ -21,7 +21,6 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-marketplace',
     \ 'coc-clangd',
-    \ 'coc-lua',
     \ 'coc-rls',
     \ ]
 

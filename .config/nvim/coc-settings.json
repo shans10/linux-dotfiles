@@ -69,6 +69,18 @@
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
+    },
+    "lua": {
+      "cwd": "/home/shan/lua-language-server",
+      "command": "/home/shan/lua-language-server/bin/Linux/lua-language-server",
+      "args": [
+        "-E",
+        "-e",
+        "LANG=en",
+        "/home/shan/lua-language-server/main.lua"
+      ],
+      "filetypes": ["lua"],
+      "rootPatterns": [".git/"]
     }
   }
 }
