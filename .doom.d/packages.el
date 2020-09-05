@@ -48,3 +48,6 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;; Change cursor shape in insert mode in terminal
+(package! evil-terminal-cursor-changer)

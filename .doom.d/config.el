@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name ""
-      user-mail-address "")
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -25,7 +25,11 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+; (setq doom-theme 'doom-monokai-pro)
+(if (not (display-graphic-p))
+      (load-theme 'doom-monokai-pro t)
+  (load-theme 'doom-gruvbox t)
+  )
 (setq doom-gruvbox-dark-variant "hard")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -36,10 +40,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
-;; Doom Modeline Settings
-(setq doom-modeline-major-mode-icon t)
-; (setq doom-modeline-buffer-state-icon t)
-; (setq doom-modeline-buffer-modification-icon t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -57,3 +57,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Flycheck Settings
+(after! flycheck
+  (setq flycheck-check-syntax-automatically '(idle-change)))
+
+;; LOAD PACKAGES
+;; Change cursor in insert mode in terminal
+(use-package! evil-terminal-cursor-changer
+  :hook (tty-setup . evil-terminal-cursor-changer-activate))
+
+;; KEYBINDINGS
+;; Lsp show diagnostics
+(map! :leader
+      :desc "New journal entry"
+      "l d" #'lsp-ui-flycheck-list)
