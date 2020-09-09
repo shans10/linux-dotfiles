@@ -71,13 +71,10 @@
       "ignoredRootPaths": ["~"]
     },
     "lua": {
-      "cwd": "/home/shan/lua-language-server",
-      "command": "/home/shan/lua-language-server/bin/Linux/lua-language-server",
+      "command": "java",
       "args": [
-        "-E",
-        "-e",
-        "LANG=en",
-        "/home/shan/lua-language-server/main.lua"
+        "-jar",
+        "/home/cl/EmmyLua-LanguageServer/EmmyLua-LS/build/libs/EmmyLua-LS-all.jar"
       ],
       "filetypes": ["lua"],
       "rootPatterns": [".git/"]
