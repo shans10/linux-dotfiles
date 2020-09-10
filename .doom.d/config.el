@@ -68,8 +68,5 @@
 (use-package! evil-terminal-cursor-changer
   :hook (tty-setup . evil-terminal-cursor-changer-activate))
 
-;; KEYBINDINGS
-;; Lsp show diagnostics
-(map! :leader
-      :desc "New journal entry"
-      "l d" #'lsp-ui-flycheck-list)
+;; Load Keybindings File
+(load! "keybindings")
