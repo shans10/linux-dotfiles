@@ -493,7 +493,7 @@ myKeys =
         , ("M-f", spawn "firefox")                  -- Firefox browser
         , ("M-g", spawn "google-chrome")            -- Google chrome browser
         , ("M-n", spawn "st -e nvim")               -- Neovim text editor
-        , ("M-e", spawn "emacsclient -c")           -- Emacs client
+        , ("M-e", spawn "emacs")                    -- Emacs text editor
         -- , ("M-S-e", spawn "emacs")                  -- Emacs text editor
         , ("M-r", spawn "st -e ranger")             -- Ranger file manager
         , ("M-t", spawn "thunar")                   -- Thunar file manager

@@ -1,0 +1,7 @@
+configuration {
+	modi: "drun,run";
+	columns: 1;
+	show-icons: true;
+	icon-theme: "Hey-yellow-dark";
+	theme: "~/.config/rofi/themes/colors.rasi";
+}

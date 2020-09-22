@@ -1,5 +1,0 @@
-rofi.theme:                             ~/.config/rofi/themes/colors.rasi
-rofi.modi:                              drun,run
-rofi.columns:                           1
-rofi.show-icons:                        true
-rofi.icon-theme:                        Papirus-Dark
