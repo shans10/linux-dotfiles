@@ -34,24 +34,54 @@ function fish_user_key_bindings
 end
 
 
-#ALIASES
+### ALIASES
 
+## ARCH LINUX
 # Aliases for software managment
-# pacman or pm
-alias pacman='sudo pacman --color auto'
-alias Pupdate='sudo pacman -Syu'
-alias Pinstall='sudo pacman -S'
+# pacman
+alias pupdate='sudo pacman -Syu'
+alias pinstall='sudo pacman -S'
+alias premove='sudo pacman -Rns'
 
 # yay as aur helper - updates everything
 alias update="yay -Syu"
 alias install="yay -S"
 alias remove='yay -Rns'
 
-#Cleanup orphaned packages
+# Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
 # Mirror Update to latest top 200 mirrors
-alias mirror-update='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirror-update='sudo reflector --country India --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+
+
+## FEDORA
+# Aliases for software managment
+# dnf
+alias du='sudo dnf update'
+alias di='sudo dnf install'
+alias dr='sudo dnf remove'
+alias ds='sudo dnf search'
+alias da='sudo dnf autoremove'
+alias dc='sudo dnf clean'
+
+# yum
+alias yu='sudo yum update'
+alias yi='sudo yum install'
+alias yr='sudo yum remove'
+alias ys='sudo yum search'
+alias ya='sudo yum autoremove'
+alias yc='sudo yum clean'
+
+
+## CLEAR LINUX
+# Aliases for software managment
+# Swupd
+alias update='sudo swupd update'
+alias add='sudo swupd bundle-add'
+alias remove='sudo swupd bundle-remove'
+alias search='sudo swupd search'
+alias clean='sudo swupd clean'
 
 
 # Containers
@@ -75,22 +105,8 @@ alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias initramfs-gen='sudo mkinitcpio -p linux'
 
 
-# Remove file and directory with sudo
-alias srem='sudo rm'
-alias sremd='sudo rm -r'
 
-# Copy file and directory with sudo
-alias copy='cp'
-alias copyd='cp -r'
-alias scopy='sudo cp'
-alias scopyd='sudo cp -r'
-
-# Mount phone's partition using FTP
-alias fconnect='curlftpfs ftp://192.168.43.1:9999 /mnt/ftpfs/'
-# Unmount partition
-alias fdiscon='sudo umount /mnt/ftpfs'
-
-
+### EXPORTS
 # Set Locale
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
