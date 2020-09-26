@@ -2,14 +2,14 @@
 
 """ Term
 "" Split
-nmap <M-t> :15new term://powershell -nologo<CR>
-imap <M-t> :15new term://powershell -nologo<CR>
-tmap <M-t> :15new term://powershell -nologo<CR>
+nmap <M-t> :15new term://wsl<CR>
+imap <M-t> :15new term://wsl<CR>
+tmap <M-t> :15new term://wsl<CR>
 
 "" Full
-nmap <M-S-t> :term=powershell -nologo<CR>
-imap <M-S-t> :term=powershell -nologo<CR>
-tmap <M-S-t> :term=powershell -nologo<CR>
+nmap <M-S-t> :term=wsl<CR>
+imap <M-S-t> :term=wsl<CR>
+tmap <M-S-t> :term=wsl<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

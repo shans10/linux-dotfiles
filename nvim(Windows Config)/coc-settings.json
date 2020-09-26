@@ -67,8 +67,17 @@
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+      "filetypes": ["sh"]
+      //"ignoredRootPaths": ["~"]
+    },
+    "lua": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "C:/Users/shant/EmmyLua-LanguageServer/EmmyLua-LS/build/libs/EmmyLua-LS-all.jar"
+      ],
+      "filetypes": ["lua"],
+      "rootPatterns": [".git/"]
     }
   }
 }

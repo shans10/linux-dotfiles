@@ -13,13 +13,12 @@ Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'Yggdroot/LeaderF',                { 'do': '.\install.bat' }
 Plug 'lambdalisue/suda.vim'
 Plug 'machakann/vim-highlightedyank'
-Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm',           { 'on': [ 'FloatermToggle', 'FloatermNew' ] }
-Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRefresh' ] }
+Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
