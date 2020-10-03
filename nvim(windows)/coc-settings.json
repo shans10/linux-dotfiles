@@ -38,6 +38,7 @@
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
+  "python.jediEnabled": false,
 
   // explorer
   //"explorer.width": 31,

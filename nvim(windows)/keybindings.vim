@@ -1,15 +1,16 @@
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  " Personal Keybindings " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Term
 "" Split
-nmap <M-t> :15new term://wsl<CR>
-imap <M-t> :15new term://wsl<CR>
-tmap <M-t> :15new term://wsl<CR>
+nmap <M-t> :15new term://pwsh -nologo<CR>
+imap <M-t> :15new term://pwsh -nologo<CR>
+tmap <M-t> :15new term://pwsh -nologo<CR>
 
 "" Full
-nmap <M-S-t> :term=wsl<CR>
-imap <M-S-t> :term=wsl<CR>
-tmap <M-S-t> :term=wsl<CR>
+nmap <M-S-t> :term=pwsh -nologo<CR>
+imap <M-S-t> :term=pwsh -nologo<CR>
+tmap <M-S-t> :term=pwsh -nologo<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
