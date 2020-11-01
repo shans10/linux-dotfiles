@@ -57,21 +57,12 @@ alias mirror-update='sudo reflector --country India --latest 5 --protocol http -
 
 ## FEDORA
 # Aliases for software managment
-# dnf
-alias du='sudo dnf update'
-alias di='sudo dnf install'
-alias dr='sudo dnf remove'
-alias ds='sudo dnf search'
-alias da='sudo dnf autoremove'
-alias dc='sudo dnf clean'
-
-# yum
-alias yu='sudo yum update'
-alias yi='sudo yum install'
-alias yr='sudo yum remove'
-alias ys='sudo yum search'
-alias ya='sudo yum autoremove'
-alias yc='sudo yum clean'
+alias update='sudo dnf update'
+alias install='sudo dnf install'
+alias remove='sudo dnf remove'
+alias search='sudo dnf search'
+alias autoremove='sudo dnf autoremove'
+alias clean='sudo dnf clean'
 
 
 ## CLEAR LINUX
@@ -120,7 +111,7 @@ export LDLIBS="-lcrypt -lcs50 -lm"
 
 
 # 256 colors
-export TERM="st-256color"
+export TERM="xterm-256color"
 
 
 # QT Platform

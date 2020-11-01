@@ -24,7 +24,7 @@ Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRef
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
-Plug 'rrethy/vim-hexokinase',           { 'do': 'make hexokinase', 'on': 'HexokinaseTurnOn' }
+" Plug 'rrethy/vim-hexokinase',           { 'do': 'make hexokinase', 'on': 'HexokinaseTurnOn' }
 Plug 'mbbill/undotree',                 { 'on': 'UndotreeToggle' }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
