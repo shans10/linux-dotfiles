@@ -29,14 +29,14 @@ set updatetime=300
 
 """ Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 """ Use <c-space> to trigger completion.
@@ -49,6 +49,11 @@ else
     imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 """ GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -58,42 +63,32 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 """ Use K to show documentation in preview window.
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
 endfunction
 
 """ Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-""" Show documentation for the word under the cursor
-" function! ShowDocIfNoDiagnostic(timer_id)
-"   if (coc#util#has_float() == 0)
-"     silent call CocActionAsync('doHover')
-"   endif
-" endfunction
-
-" function! s:show_hover_doc()
-"   call timer_start(500, 'ShowDocIfNoDiagnostic')
-" endfunction
-
-" autocmd CursorHoldI * :call <SID>show_hover_doc()
-" autocmd CursorHold * :call <SID>show_hover_doc()
-
-""" Symbol renaming.
-" nmap <leader>rn <Plug>(coc-rename)
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-    autocmd!
-    "" Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    "" Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 """ Remap keys for applying codeAction to the current line.
@@ -101,28 +96,26 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 """ Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-""" Introduce function text object
-"" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
 
-""" Add `:Format` command to format current buffer.
+" Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-""" Add `:Fold` command to fold current buffer.
+" Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-""" Add `:OR` command for organize imports of the current buffer.
+" Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-""" Add (Neo)Vim's native statusline support.
-"" NOTE: Please see `:h coc-status` for integrations with external plugins that
-"" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-""" Mappings using CoCList:
+""" Mappings for CoCList:
 "" Show all diagnostics.
 nnoremap <silent> <space>ld  :<C-u>CocList diagnostics<cr>
 "" Manage extensions.
@@ -143,30 +136,6 @@ nnoremap <silent> <space>lt  :<C-u>CocList floaterm<cr>
 """ Codelens
 nmap <silent> <leader>cl :CocAction codelens<CR>
 
-""" Explorer
-let g:coc_explorer_global_presets = {
-            \   'floating': {
-            \      'position': 'floating',
-            \   },
-            \   'floatingLeftside': {
-            \      'position': 'floating',
-            \      'floating-position': 'left-center',
-            \      'floating-width': 25,
-            \   },
-            \   'floatingRightside': {
-            \      'position': 'floating',
-            \      'floating-position': 'right-center',
-            \      'floating-width': 25,
-            \   },
-            \   'simplify': {
-            \     'file.child.template': '[selection | clip | 1] [indent][icon | 0] [filename omitCenter 1]'
-            \   }
-            \ }
-nmap <silent> <M-e> :CocCommand explorer<CR>
-" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
 """ Snippets
 "" Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -182,3 +151,4 @@ let g:coc_snippet_prev = '<c-k>'
 
 "" Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
