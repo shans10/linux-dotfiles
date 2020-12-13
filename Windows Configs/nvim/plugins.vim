@@ -14,6 +14,7 @@ Plug 'Yggdroot/LeaderF',                { 'do': '.\install.bat' }
 Plug 'lambdalisue/suda.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'mhinz/vim-signify'

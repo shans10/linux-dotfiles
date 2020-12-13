@@ -58,10 +58,15 @@ imap <M-S-q> <esc>:q!<CR>
 nmap <M-S-q> :q!<CR>
 tmap <M-S-q> <esc>:q!<CR>
 
+""" Save
+imap <M-w> <esc>:w<CR>
+nmap <M-w> :w<CR>
+tmap <M-w> <esc>:w<CR>
+
 """ Save and Quit
-imap <M-w> <esc>:wq<CR>
-nmap <M-w> :wq<CR>
-tmap <M-w> <esc>:wq<CR>
+imap <M-S-w> <esc>:wq<CR>
+nmap <M-S-w> :wq<CR>
+tmap <M-S-w> <esc>:wq<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -99,7 +104,7 @@ imap <S-Right> <Esc>v<Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ BUFFERS
-nmap <leader>ls :ls<CR>
+" nmap <leader>ls :ls<CR>
 
 """ Goto Buffer
 nnoremap <M-S-b> :buffers<CR>:buffer<Space>
@@ -180,13 +185,10 @@ vmap <leader>es <home>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Controla-S Save
+""" Control-S Save
 nmap <C-S> :w<cr>
 vmap <C-S> <esc>:w<cr>
 imap <C-S> <esc>:w<cr>
-nmap <M-S> :w<cr>
-vmap <M-S> <esc>:w<cr>
-imap <M-S> <esc>:w<cr>
 " Save + back into insert
 " imap <C-S> <esc>:w<cr>a
 
@@ -289,7 +291,11 @@ nnoremap <leader>so :so %<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Love2d
-nnoremap <leader>lo :!love . &<CR>
+""" Live Server
+nnoremap <leader>ls :!START "" live-server<CR>
+nnoremap <leader>lk :!taskkill /IM "node.exe" /F<CR>
+
+""" Flask Server
+nnoremap <leader>fl :!START "" flask run<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

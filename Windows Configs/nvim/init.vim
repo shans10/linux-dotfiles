@@ -31,7 +31,7 @@ set termguicolors
 colorscheme gruvbox
 
 """ Bold Highlights
-" source C:/Users/shant/AppData/Local/nvim/bold-highlights.vim
+source C:/Users/shant/AppData/Local/nvim/bold-highlights.vim
 
 " Signify Symbols Colors
 highlight SignifySignAdd    ctermfg=green   guifg=#b8bb26 cterm=NONE gui=bold
@@ -45,12 +45,6 @@ filetype plugin indent on
 
 """ Commandline Completion
 set wildmenu
-
-""" Shell
-" let &shell = has('win32') ? 'powershell' : 'pwsh'
-" set shellquote= shellpipe=\| shellxquote=
-" set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
-" set shellredir=\|\ Out-File\ -Encoding\ UTF8
 
 """ Split Below/Right
 set splitbelow

@@ -32,7 +32,7 @@ let g:webdevicons_enable_startify = 1
 
 function! StartifyEntryFormat()
         return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-    endfunction
+endfunction
 
 let g:startify_bookmarks = [
             \ { 'p': '~/.config/nvim/plugins.vim' },

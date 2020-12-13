@@ -1,10 +1,3 @@
-""" Lazy Load
-" augroup airline
-"     autocmd!
-"     autocmd CursorHold * AirlineToggle
-" augroup END
-" map <leader>ar :AirlineRefresh<CR>
-
 """ Cache changes to highliting groups
 let g:airline_highlighting_cache = 1
 
@@ -30,13 +23,6 @@ let g:airline#extensions#tabline#tab_nr_type = 1   " Show Tab Number
 " let g:airline#extensions#tabline#tabs_label = 't'
 let g:airline#extensions#tabline#tab_min_count = 2
 
-"" Buffers
-let g:airline#extensions#tabline#show_buffers = 0
-"let g:airline#extensions#tabline#buf_label_first = 1
-" let g:airline#extensions#tabline#buffers_label = 'b'
-" let airline#extensions#tabline#current_first = 1
-"let g:airline#extensions#tabline#buffer_nr_show = 0
-
 "" Filename
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnamemod = ':t'   " Just show the file name
@@ -52,23 +38,12 @@ let g:airline_right_sep = ''
 " let g:airline_right_alt_sep = ''
 
 "" Extension Settings
-" let g:airline_extensions = [ 'tabline', 'coc', 'hunks', 'branch' ]
 let g:airline#extensions#disable_rtp_load = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#hunks#non_zero_only = 1
-" let airline#extensions#coc#warning_symbol = "\uf071 "
-" let airline#extensions#coc#error_symbol = "\uf05e "
-
-"" General Appearance Tweaks
-let g:webdevicons_enable_airline_tabline = 1
-" let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-" let g:airline_section_y = '%3p%% '
-let g:airline_section_z = '%3p%%  | %l  : %-2v'
-
-"" Colors
-" autocmd VimEnter * hi airline_tablabel_right guifg=#1d2021 guibg=#fe8019
-" autocmd VimEnter * hi airline_tabmod guifg=#1d2021 guibg=#fe8019
+let airline#extensions#coc#warning_symbol = "\uf071 "
+let airline#extensions#coc#error_symbol = "\uf05e "
 
 "" Mode Map
 let g:airline_mode_map = {

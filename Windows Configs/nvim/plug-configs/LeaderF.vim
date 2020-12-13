@@ -16,6 +16,9 @@ let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 
+" Show icons, icons are shown by default
+let g:Lf_ShowDevIcons = 0
+
 " search word under cursor, the pattern is treated as regex, and enter normal mode directly
 noremap <Leader>fc :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
 
