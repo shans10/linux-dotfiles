@@ -62,9 +62,9 @@
 		"icon": "ms-appdata:///roaming/fedora.png"
             },
             {
-                "guid": "{4d4cc780-cacb-5b6f-a183-29b5f6cdcd23}",
+                "guid": "{8bf2d7ce-4310-535d-8cfe-1fe3b5f5a5b1}",
                 "hidden": false,
-                "name": "CentOS",
+                "name": "ArchLinux",
                 "source": "Windows.Terminal.Wsl",
 		"fontFace": "CaskaydiaCove NF",
 		"fontSize": 10,
@@ -74,8 +74,8 @@
 		"scrollbarState": "hidden",
 		"bellStyle": "none",
 		"cursorShape": "filledBox",
-		"startingDirectory": "//wsl$/CentOS/home/cent",
-		"icon": "ms-appdata:///roaming/centos.png"
+		"startingDirectory": "//wsl$/ArchLinux/home/arch",
+		"icon": "ms-appdata:///roaming/arch.png"
             },
             {
                 "guid": "{56b4786f-df4b-56ac-bdb4-861346071630}",
@@ -92,6 +92,22 @@
 		"cursorShape": "filledBox",
 		"startingDirectory": "//wsl$/ClearLinux/home/cl",
 		"icon": "ms-appdata:///roaming/cl.png"
+            },
+            {
+                "guid": "{4d4cc780-cacb-5b6f-a183-29b5f6cdcd23}",
+                "hidden": false,
+                "name": "CentOS",
+                "source": "Windows.Terminal.Wsl",
+		"fontFace": "CaskaydiaCove NF",
+		"fontSize": 10,
+		"colorScheme": "Gruvbox",
+		"useAcrylic": false,
+		"acrylicOpacity": 0.91,
+		"scrollbarState": "hidden",
+		"bellStyle": "none",
+		"cursorShape": "filledBox",
+		"startingDirectory": "//wsl$/CentOS/home/cent",
+		"icon": "ms-appdata:///roaming/centos.png"
             },
             {
                 "guid": "{dd241469-5e90-55ff-816c-914203bdc6ea}",
