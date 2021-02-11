@@ -70,7 +70,7 @@ end
 ### ALIASES ###
 
 ## ARCH LINUX
-# Aliases for software managment
+# Aliases for package managment
 # pacman
 alias pupdate='sudo pacman -Syu'
 alias pinstall='sudo pacman -S'
@@ -88,19 +88,27 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias mirror-update='sudo reflector --country India --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
 
+## Pop!_OS(Debian/Ubuntu based)
+# Aliases for package management(apt)
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias install='sudo apt install'
+alias remove='sudo apt remove --purge'
+alias autoremove='sudo apt autoremove'
+alias autoclean='sudo dnf autoclean'
+
+
 ## FEDORA
-# Aliases for software managment
+# Aliases for package managment
 alias update='sudo dnf update'
 alias install='sudo dnf install'
 alias remove='sudo dnf remove'
 alias search='sudo dnf search'
 alias autoremove='sudo dnf autoremove'
-alias clean='sudo dnf clean'
 
 
 ## CLEAR LINUX
-# Aliases for software managment
-# Swupd
+# Aliases for package managment(swupd)
 alias update='sudo swupd update'
 alias add='sudo swupd bundle-add'
 alias remove='sudo swupd bundle-remove'
@@ -120,44 +128,32 @@ alias initramfs-gen='sudo mkinitcpio -p linux'
 
 ### SETTING FISH ENVIRONMENT VARIABLES ###
 
-### SETTING FISH ENVIRONMENT VARIABLES ###
-
 set TERM "xterm-256color"           # Sets the terminal type
-set EDITOR "alacritty -e nvim"      # $EDITOR use Emacs in terminal
+set EDITOR "alacritty -e nvim"      # $EDITOR use Neovim in terminal
 set VISUAL "nvim-qt"                # $VISUAL use Neovim-Qt
 
 # Flatpak XDG_DATA_DIRS Workaround
-set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
-set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+# set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
+# set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 
-for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bin
-    if test -d $flatpakdir
-        contains $flatpakdir $PATH; or set -a PATH $flatpakdir
-    end
-end
+# for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bin
+#     if test -d $flatpakdir
+#         contains $flatpakdir $PATH; or set -a PATH $flatpakdir
+#     end
+# end
 
-# Set Locale
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-
-# CS50
-# configure clang
-export CC="clang"
-export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
-export LDLIBS="-lcrypt -lcs50 -lm"
-
-# QT Platform
-export QT_QPA_PLATFORMTHEME=qt5ct
+# QT applications theming in twm
+# export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Firefox Precision Scrolling
-export MOZ_USE_XINPUT2=1
+# export MOZ_USE_XINPUT2=1
 
 # Start X at login
-if status --is-login
-  if test -z "$DISPLAY" -a $XDG_VTNR = 1
-    exec startx -- -keeptty
-  end
-end
+# if status --is-login
+#   if test -z "$DISPLAY" -a $XDG_VTNR = 1
+#     exec startx -- -keeptty
+#   end
+# end
 
 # Setting Display Variable for WSL
 # if uname -r | grep 'microsoft' > /dev/null
