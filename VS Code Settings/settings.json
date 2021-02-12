@@ -1,0 +1,101 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "errorLens.addNumberOfDiagnostics": true,
+    "editor.fontFamily": "Hack NF",
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "terminal.integrated.shellArgs.windows": "-nologo",
+    "vim.neovimPath": "C:\\Users\\shant\\scoop\\apps\\neovim\\current\\bin\\nvim.exe",
+    "errorLens.gutterIconsEnabled": true,
+    "vim.leader": ",",
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "editor.minimap.enabled": false,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "leader",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+            ],
+        },
+        {
+            "before": [
+                "leader",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+            ],
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "t"
+            ],
+            "commands": [
+                ":tabnew"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "n"
+            ],
+            "commands": [
+                ":tabnext"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "p"
+            ],
+            "commands": [
+                ":tabprev"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t",
+                "o"
+            ],
+            "commands": [
+                ":tabo"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "i"
+            ],
+            "after": [
+                "g",
+                "g",
+                "=",
+                "G"
+            ]
+        },
+    ]
+}
