@@ -11,6 +11,7 @@ call plug#begin('C:/Users/shant/AppData/Local/nvim/plugged')
 Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'Yggdroot/LeaderF',                { 'do': '.\install.bat' }
+Plug 'Shougo/denite.nvim',              { 'do': ':UpdateRemotePlugins' }
 Plug 'lambdalisue/suda.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
@@ -37,10 +38,9 @@ autocmd VimEnter *
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Sourcing the plugins configuration files
-
 source C:/Users/shant/AppData/Local/nvim/plug-configs/startify.vim                     " startify
 source C:/Users/shant/AppData/Local/nvim/plug-configs/vim-commentary.vim               " vim-commentary
-source C:/Users/shant/AppData/Local/nvim/plug-configs/LeaderF.vim                      " LeaderF
+source C:/Users/shant/AppData/Local/nvim/plug-configs/denite.vim                       " denite
 source C:/Users/shant/AppData/Local/nvim/plug-configs/suda.vim                         " suda
 source C:/Users/shant/AppData/Local/nvim/plug-configs/signify.vim                      " signify
 source C:/Users/shant/AppData/Local/nvim/plug-configs/high-yank.vim                    " highlighted-yank
