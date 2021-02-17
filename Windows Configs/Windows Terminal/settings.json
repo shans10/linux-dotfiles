@@ -2,112 +2,135 @@
 // It should still be usable in newer versions, but newer versions might have additional
 // settings, help text, or changes that you will not see unless you clear this file
 // and let us generate a new one for you.
-
 // To view the default settings, hold "alt" while clicking on the "Settings" button.
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-
     // You can add more global application settings here.
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
-
     // If enabled, selections are automatically copied to your clipboard.
     "copyOnSelect": false,
-
     // If enabled, formatted data is also copied to your clipboard
     "copyFormatting": false,
-
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
     //   and can be invoked from the commandline with `wt.exe -p xxx`
     // To learn more about profiles, visit https://aka.ms/terminal-profile-settings
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             // Put settings here that you want to apply to all profiles.
         },
-        "list":
-        [
+        "list": [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell Core",
                 "commandline": "pwsh -nologo",
-		"fontFace": "CaskaydiaCove NF",
-		"fontSize": 10,
-		"colorScheme": "Gruvbox",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox"
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox"
             },
             {
-                "guid": "{aa8efdb5-3cbe-50b2-a332-9203dc1ee217}",
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
-                "name": "Fedora",
+                "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
-		"fontFace": "CaskaydiaCove NF",
-		"fontSize": 10,
-		"colorScheme": "Gruvbox",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox",
-		"startingDirectory": "//wsl$/Fedora/home/fedora",
-		"icon": "ms-appdata:///roaming/fedora.png"
-            },
-            {
-                "guid": "{8bf2d7ce-4310-535d-8cfe-1fe3b5f5a5b1}",
-                "hidden": false,
-                "name": "ArchLinux",
-                "source": "Windows.Terminal.Wsl",
-		"fontFace": "CaskaydiaCove NF",
-		"fontSize": 10,
-		"colorScheme": "Gruvbox",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox",
-		"startingDirectory": "//wsl$/ArchLinux/home/arch",
-		"icon": "ms-appdata:///roaming/arch.png"
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "startingDirectory": "//wsl$/Ubuntu/home/shan",
+                "icon": "ms-appdata:///roaming/ubuntu.png"
             },
             {
                 "guid": "{56b4786f-df4b-56ac-bdb4-861346071630}",
                 "hidden": false,
                 "name": "ClearLinux",
                 "source": "Windows.Terminal.Wsl",
-		"fontFace": "CaskaydiaCove NF",
-		"fontSize": 10,
-		"colorScheme": "Gruvbox",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox",
-		"startingDirectory": "//wsl$/ClearLinux/home/cl",
-		"icon": "ms-appdata:///roaming/cl.png"
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "startingDirectory": "//wsl$/ClearLinux/home/cl",
+                "icon": "ms-appdata:///roaming/cl.png"
+            },
+            {
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl",
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "startingDirectory": "//wsl$/Debian/home/deb",
+                "icon": "ms-appdata:///roaming/debian.png"
+            },
+            {
+                "guid": "{aa8efdb5-3cbe-50b2-a332-9203dc1ee217}",
+                "hidden": false,
+                "name": "Fedora",
+                "source": "Windows.Terminal.Wsl",
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "startingDirectory": "//wsl$/Fedora/home/fedora",
+                "icon": "ms-appdata:///roaming/fedora.png"
+            },
+            {
+                "guid": "{8bf2d7ce-4310-535d-8cfe-1fe3b5f5a5b1}",
+                "hidden": false,
+                "name": "ArchLinux",
+                "source": "Windows.Terminal.Wsl",
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "startingDirectory": "//wsl$/ArchLinux/home/arch",
+                "icon": "ms-appdata:///roaming/arch.png"
             },
             {
                 "guid": "{4d4cc780-cacb-5b6f-a183-29b5f6cdcd23}",
                 "hidden": false,
                 "name": "CentOS",
                 "source": "Windows.Terminal.Wsl",
-		"fontFace": "CaskaydiaCove NF",
-		"fontSize": 10,
-		"colorScheme": "Gruvbox",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox",
-		"startingDirectory": "//wsl$/CentOS/home/cent",
-		"icon": "ms-appdata:///roaming/centos.png"
+                "fontFace": "Hack NF",
+                "fontSize": 10,
+                "colorScheme": "Gruvbox",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "startingDirectory": "//wsl$/CentOS/home/cent",
+                "icon": "ms-appdata:///roaming/centos.png"
             },
             {
                 "guid": "{dd241469-5e90-55ff-816c-914203bdc6ea}",
@@ -115,14 +138,14 @@
                 "commandline": "powershell.exe -noe -c \".{$vsInstallPath=&\"\"\"${Env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\vswhere.exe\"\"\" -Property InstallationPath;Import-Module \"\"\"$vsInstallPath\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\";function prompt(){Write-Host \"\"\"VS Dev Prompt $Env:VSCMD_VER \"\"\" -NoNewline -ForegroundColor White;Write-Host $(pwd) -NoNewline;Write-Host \"\"\">\"\"\" -NoNewline -ForegroundColor White;return \"\"\" \"\"\"}Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation}\"",
                 "hidden": false,
                 "startingDirectory": "~",
-		"fontSize": 10,
-		"colorScheme": "Campbell Powershell",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox",
-		"icon": "ms-appdata:///roaming/vs2019-32.png"
+                "fontSize": 10,
+                "colorScheme": "Campbell Powershell",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox",
+                "icon": "ms-appdata:///roaming/vs2019.png"
             },
             {
                 // Make changes here to the powershell.exe profile.
@@ -130,13 +153,13 @@
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe -nologo",
                 "hidden": false,
-		"fontSize": 10,
-		"colorScheme": "Campbell Powershell",
-		"useAcrylic": false,
-		"acrylicOpacity": 0.91,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox"
+                "fontSize": 10,
+                "colorScheme": "Campbell Powershell",
+                "useAcrylic": false,
+                "acrylicOpacity": 0.91,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox"
             },
             {
                 // Make changes here to the cmd.exe profile.
@@ -144,54 +167,48 @@
                 "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "hidden": false,
-		"fontSize": 10,
-		"colorScheme": "Tango Dark",
-		"useAcrylic": false,
-		"acrylicOpacity": 1,
-		"scrollbarState": "hidden",
-		"bellStyle": "none",
-		"cursorShape": "filledBox"
+                "fontSize": 10,
+                "colorScheme": "Tango Dark",
+                "useAcrylic": false,
+                "acrylicOpacity": 1,
+                "scrollbarState": "hidden",
+                "bellStyle": "none",
+                "cursorShape": "filledBox"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure",
-		"hidden": true
+                "source": "Windows.Terminal.Azure"
             }
         ]
     },
-
     // Add custom color schemes to this array.
     // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
-    "schemes": 
-    [
-	{
-    	    "name" : "Gruvbox",
-
+    "schemes": [
+        {
+            "name": "Gruvbox",
             "cursorColor": "#ebdbb2",
-    	    "selectionBackground": "#ebdbb2",
-
-    	    "background" : "#1d2021",
-    	    "foreground" : "#ebdbb2",
-	
-    	    "black" : "#1d2021",
-    	    "blue" : "#458588",
-    	    "cyan" : "#689d6a",
-    	    "green" : "#98971a",
-    	    "purple" : "#b16286",
-    	    "red" : "#cc241d",
-    	    "white" : "#a89984",
-    	    "yellow" : "#d79921",
-    	    "brightBlack" : "#928374",
-    	    "brightBlue" : "#83a598",
-    	    "brightCyan" : "#8ec07c",
-    	    "brightGreen" : "#b8bb26",
-    	    "brightPurple" : "#d3869b",
-    	    "brightRed" : "#fb4934",
-    	    "brightWhite" : "#ebdbb2",
-    	    "brightYellow" : "#fabd2f"
-	},
+            "selectionBackground": "#ebdbb2",
+            "background": "#1d2021",
+            "foreground": "#ebdbb2",
+            "black": "#1d2021",
+            "blue": "#458588",
+            "cyan": "#689d6a",
+            "green": "#98971a",
+            "purple": "#b16286",
+            "red": "#cc241d",
+            "white": "#a89984",
+            "yellow": "#d79921",
+            "brightBlack": "#928374",
+            "brightBlue": "#83a598",
+            "brightCyan": "#8ec07c",
+            "brightGreen": "#b8bb26",
+            "brightPurple": "#d3869b",
+            "brightRed": "#fb4934",
+            "brightWhite": "#ebdbb2",
+            "brightYellow": "#fabd2f"
+        },
         {
             "name": "Campbell Powershell",
             "foreground": "#CCCCCC",
@@ -236,22 +253,30 @@
             "brightCyan": "#34E2E2",
             "brightWhite": "#EEEEEC"
         }
-],
-
+    ],
     // Add custom actions and keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
     // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
-    "actions":
-    [
+    "actions": [
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
-        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
-
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
         // Press Ctrl+Shift+F to open the search box
-        { "command": "find", "keys": "ctrl+shift+f" }
-
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        }
         // Press Alt+Shift+D to open a new pane.
         // - "split": "auto" makes this pane open in the direction that provides the most surface area.
         // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.

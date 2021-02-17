@@ -17,9 +17,12 @@ function explore { explorer.exe . }
 # Show Colors in ls command
 Import-Module Get-ChildItemColor
 
-# Z Module for Changing Directory
-Import-Module z
-
 # Starship Prompt
 Invoke-Expression (&starship init powershell)
 $ENV:STARSHIP_CONFIG = "$HOME\.starship"
+
+# Zoxide(z utility to change directory)
+Invoke-Expression (& {
+    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell) -join "`n"
+})
