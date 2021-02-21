@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Cascadia Code" :size 13 :weight 'regular))
+; (setq doom-font (font-spec :family "Cascadia Code" :size 13 :weight 'regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -29,8 +29,8 @@
 ; (setq doom-theme 'doom-monokai-pro)
 (if (not (display-graphic-p))
       (setq doom-theme 'doom-monokai-pro)
-  (setq doom-theme 'doom-gruvbox)
-  (setq doom-gruvbox-dark-variant "hard")
+  (setq doom-theme 'doom-monokai-spectrum)
+  ;; (setq doom-gruvbox-dark-variant "hard")
   )
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -70,3 +70,13 @@
 
 ;; Load Keybindings File
 (load! "keybindings")
+
+;; Start Emacs Maximized
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+
+;; Show File Icons in Neotree
+(after! doom-themes
+  (remove-hook 'doom-load-theme-hook #'doom-themes-neotree-config))
+
+;; Show major mode icon in doom modeline(filetype icon)
+(setq doom-modeline-major-mode-icon t)
