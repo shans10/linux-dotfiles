@@ -1,7 +1,11 @@
 configuration {
 	modi: "drun,run";
-	columns: 1;
+	columns: 2;
 	show-icons: true;
 	icon-theme: "Hey-yellow-dark";
 	theme: "~/.config/rofi/themes/colors.rasi";
+}
+
+element-icon {
+    size:             2.5ch ;
 }

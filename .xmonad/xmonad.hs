@@ -229,8 +229,6 @@ myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm                               -- Terminal(st)
                 , NS "pulse" spawnPulse findPulse managePulse                               -- Pavucontrol
                 , NS "calculator" spawnCalculator findCalculator manageCalculator           -- Calculator
-                , NS "emulator" spawnEmulator findEmulator manageEmulator                   -- Android Emulator
-                , NS "emulatorT" spawnEmulatorT findEmulatorT manageEmulatorT               -- Android Emulator Toolbox
                 ]
   where
     spawnTerm  = myTerminal ++ " -n scratchpad"
@@ -259,14 +257,6 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm                   
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-
-    spawnEmulator  = "/home/shan/Android/Sdk/emulator/emulator -avd Pixel_3a_API_29"
-    findEmulator   = stringProperty "_NET_WM_NAME" =? "Android Emulator - Pixel_3a_API_29:5554"
-    manageEmulator = doCenterFloat
-
-    spawnEmulatorT  = "/home/shan/Android/Sdk/emulator/emulator -avd Pixel_3a_API_29"
-    findEmulatorT   = stringProperty "_NET_WM_NAME" =? "Emulator"
-    manageEmulatorT = doCenterFloat
 
 ------------------------------------------------------------------------
 ---WORKSPACES
@@ -463,7 +453,7 @@ myKeys =
         , ("M-C-m", sendMessage $ Toggle NBFULL)                               -- Toggle Monocle Layout
         , ("M-S-<Space>", sendMessage NextLayout)                              -- Switch to next layout
         , ("M-S-n", sendMessage $ Toggle NOBORDERS)                            -- Toggles noborder
-        , ("M-S-f", sendMessage (Toggle NBFULL) >> sendMessage ToggleStruts)   -- Toggles fullscreen
+        , ("M-C-f", sendMessage (Toggle NBFULL) >> sendMessage ToggleStruts)   -- Toggles fullscreen
         , ("M-<Space>", withFocused toggleFloat)                               -- Toggle a window between floating and tiling states
         , ("M-S-x", sendMessage $ Toggle REFLECTX)                             -- Swap master/stack positions horizontally
         , ("M-S-y", sendMessage $ Toggle REFLECTY)                             -- Swap master/stack positions vertically
@@ -477,10 +467,8 @@ myKeys =
 
     -- Scratchpads
         , ("M-<Return>", namedScratchpadAction myScratchPads "terminal")       -- Terminal
-        , ("M-S-p", namedScratchpadAction myScratchPads "pulse")               -- Pavucontrol
-        , ("M-q", namedScratchpadAction myScratchPads "calculator")            -- Qalculator-gtk
-        , ("M-S-e", namedScratchpadAction myScratchPads "emulator")            -- Android Emulator
-        , ("M-C-e", namedScratchpadAction myScratchPads "emulatorT")           -- Android Emulator Toolbar
+        , ("M1-C-p", namedScratchpadAction myScratchPads "pulse")              -- Pavucontrol
+        , ("M1-C-c", namedScratchpadAction myScratchPads "calculator")         -- Qalculator-gtk
 
     -- Bar Toggle
         , ("M-b", sendMessage ToggleStruts)         -- Hide Xmobar
@@ -490,16 +478,16 @@ myKeys =
         , ("M-C-w", spawn "rofi -show window")      -- rofi window(show all opened applications)
 
     -- My Applications
-        , ("M-f", spawn "firefox")                  -- Firefox browser
-        , ("M-g", spawn "google-chrome")            -- Google chrome browser
-        , ("M-n", spawn "st -e nvim")               -- Neovim text editor
-        , ("M-e", spawn "emacs")                    -- Emacs text editor
-        -- , ("M-S-e", spawn "emacs")                  -- Emacs text editor
-        , ("M-r", spawn "st -e ranger")             -- Ranger file manager
-        , ("M-t", spawn "thunar")                   -- Thunar file manager
-        , ("M-z", spawn "zathura")                  -- Zathura pdf reader
-        , ("M-S-z", spawn "tabbed -c zathura -e")   -- Tabbed zathura
-        , ("M-S-w", spawn "networkmanager_dmenu")   -- Dmenu based wifi menu
+        , ("M-S-f", spawn "firefox")                       -- Firefox browser
+        , ("M-g", spawn "google-chrome-stable")            -- Google chrome browser
+        , ("M-n", spawn "st -e nvim")                      -- Neovim text editor
+        , ("M-e", spawn "emacs")                           -- Emacs text editor
+        , ("M-r", spawn "st -e ranger")                    -- Ranger file manager
+        , ("M-f", spawn "nemo")                            -- Nemo file manager
+        , ("M-z", spawn "zathura")                         -- Zathura pdf reader
+        , ("M-S-z", spawn "tabbed -c zathura -e")          -- Tabbed zathura
+        , ("M1-C-w", spawn "networkmanager_dmenu")         -- Dmenu based wifi menu
+        , ("M1-C-l", spawn "slimlock")                     -- Lockscreen(slimlock)
         ]
         -- Appending search engine prompts to keybindings list.
         -- Look at "search engines" section of this config for values for "k".

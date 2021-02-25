@@ -125,12 +125,21 @@ alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 ## Generate initramfs
 alias initramfs-gen='sudo mkinitcpio -p linux'
 
+# Set feh background and default image size
+# alias feh='feh --image-bg "#1d2021" --scale-down --auto-zoom'
+
 
 ### SETTING FISH ENVIRONMENT VARIABLES ###
 
 set TERM "xterm-256color"           # Sets the terminal type
 set EDITOR "alacritty -e nvim"      # $EDITOR use Neovim in terminal
 set VISUAL "nvim-qt"                # $VISUAL use Neovim-Qt
+
+# Zoxide(z style cd)
+zoxide init fish | source
+
+# Use neovim for reading manpages
+export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # Flatpak XDG_DATA_DIRS Workaround
 # set -l xdg_data_home $XDG_DATA_HOME ~/.local/share

@@ -19,28 +19,6 @@ nmap <M-i> <C-i>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Explore Current Directory
-" let g:NetrwIsOpen=0
-""" Function to toggle netrw
-" function! ToggleNetrw()
-"     if g:NetrwIsOpen
-"         let i = bufnr("$")
-"         while (i >= 1)
-"             if (getbufvar(i, "&filetype") == "netrw")
-"                 silent exe "bwipeout " . i
-"             endif
-"             let i-=1
-"         endwhile
-"         let g:NetrwIsOpen=0
-"     else
-"         let g:NetrwIsOpen=1
-"         silent Lexplore
-"     endif
-" endfunction
-" map <M-e> :call ToggleNetrw()<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 """ Change 2 split windows from vert to horiz or horiz to vert
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tv <C-w>t<C-w>K
@@ -249,7 +227,7 @@ cmap <M-j> <down>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Back to normal mode from insert
-inoremap jk <esc>
+inoremap jj <esc>
 imap <M-c> <esc>
 tmap <M-c> <esc>
 cmap <M-c> <esc>

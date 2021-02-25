@@ -71,16 +71,28 @@ super + shift + v
 #
 
 # Spotify
-super + shift + s
-    spotify
-
-# Discord
-super + shift + d
-    discord
+super + ctrl + s
+    flatpak run com.spotify.Client
 
 # Gimp
 super + shift + g
-    gimp
+    flatpak run org.gimp.GIMP
+
+#
+# CHAT
+#
+
+# Discord
+super + shift + d
+    flatpak run com.discordapp.Discord
+
+# Slack
+super + shift + s
+    flatpak run com.slack.Slack
+
+# Telegram
+super + shift + t
+    flatpak run org.telegram.desktop
 
 #
 # SCREENSHOT
