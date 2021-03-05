@@ -3,42 +3,40 @@
 
 """ Term
 "" Split
-nmap <M-t> :15new term://pwsh -nologo<CR>
-imap <M-t> :15new term://pwsh -nologo<CR>
-tmap <M-t> :15new term://pwsh -nologo<CR>
+nmap <leader>tt :15new term://pwsh -nologo<CR>
 
 "" Full
-nmap <M-S-t> :term=pwsh -nologo<CR>
-imap <M-S-t> :term=pwsh -nologo<CR>
-tmap <M-S-t> :term=pwsh -nologo<CR>
+nmap <leader>tf :term=pwsh -nologo<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Inbuilt fuzzy finding
+" Find file
+noremap <leader>ff :find<space>
+noremap <leader>fc :find <cword> <CR>
+
+" Find buffer
+noremap <leader>bc :<C-U><C-R>=printf("b %s", "") <CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Vim Grep Keybindings
+" Search word
+nnoremap <leader>gw :grep<space>
+nnoremap <leader>gr :cwindow<CR>
+
+" Search word under cursor
+nnoremap <leader>gc :grep <cword><CR>:cwindow<CR>
+
+" Navigation between results
+nmap <silent> <C-N> :cn<CR>zv
+nmap <silent> <C-P> :cp<CR>zv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Navigation
 nmap <M-o> <C-o>
 nmap <M-i> <C-i>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""" Explore Current Directory
-" let g:NetrwIsOpen=0
-""" Function to toggle netrw
-" function! ToggleNetrw()
-"     if g:NetrwIsOpen
-"         let i = bufnr("$")
-"         while (i >= 1)
-"             if (getbufvar(i, "&filetype") == "netrw")
-"                 silent exe "bwipeout " . i
-"             endif
-"             let i-=1
-"         endwhile
-"         let g:NetrwIsOpen=0
-"     else
-"         let g:NetrwIsOpen=1
-"         silent Lexplore
-"     endif
-" endfunction
-" map <M-e> :call ToggleNetrw()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -49,24 +47,25 @@ map <Leader>tv <C-w>t<C-w>K
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Quit
+nmap <leader>qs :q<CR>
 imap <M-q> <esc>:q<CR>
 nmap <M-q> :q<CR>
 tmap <M-q> <esc>:q<CR>
 
 """ Quit Without Saving
+nmap <leader>qq :q!<CR>
 imap <M-S-q> <esc>:q!<CR>
 nmap <M-S-q> :q!<CR>
 tmap <M-S-q> <esc>:q!<CR>
 
 """ Save
-imap <M-w> <esc>:w<CR>
-nmap <M-w> :w<CR>
-tmap <M-w> <esc>:w<CR>
+nmap <leader>ww :w<CR>
 
 """ Save and Quit
-imap <M-S-w> <esc>:wq<CR>
-nmap <M-S-w> :wq<CR>
-tmap <M-S-w> <esc>:wq<CR>
+nmap <leader>wq :wq<CR>
+imap <M-w> <esc>:wq<CR>
+nmap <M-w> :wq<CR>
+tmap <M-w> <esc>:wq<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -104,7 +103,7 @@ imap <S-Right> <Esc>v<Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ BUFFERS
-" nmap <leader>ls :ls<CR>
+nmap <leader>ls :ls<CR>
 
 """ Goto Buffer
 nnoremap <M-S-b> :buffers<CR>:buffer<Space>
@@ -113,11 +112,13 @@ tmap <M-S-b> <esc>:buffers<CR>:buffer<Space>
 
 """ Delete Current Buffer
 nnoremap <M-d> :bd<CR>
+nnoremap <leader>bs :bd<CR>
 inoremap <M-d> <esc>:bd<CR>
 tmap <M-d> <esc>:bd<CR>
 
 """ Delete Current Buffer without saving
 nnoremap <M-S-d> :bd!<CR>
+nnoremap <leader>bd :bd!<CR>
 inoremap <M-S-d> <esc>:bd!<CR>
 tmap <M-S-d> <esc>:bd!<CR>
 
@@ -252,7 +253,7 @@ cmap <M-j> <down>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Back to normal mode from insert
-inoremap jk <esc>
+inoremap jj <esc>
 imap <M-c> <esc>
 tmap <M-c> <esc>
 cmap <M-c> <esc>
@@ -288,14 +289,5 @@ nmap <M-f> <C-f><CR>
 
 """ Source Config
 nnoremap <leader>so :so %<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""" Live Server
-nnoremap <leader>ls :!START "" live-server<CR>
-nnoremap <leader>lk :!taskkill /IM "node.exe" /F<CR>
-
-""" Flask Server
-nnoremap <leader>fl :!START "" flask run<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

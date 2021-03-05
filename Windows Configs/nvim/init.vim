@@ -22,7 +22,7 @@ set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
 
-" Colorscheme
+""" Colorscheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 "set t_Co=256
@@ -33,10 +33,16 @@ colorscheme gruvbox
 """ Bold Highlights
 source C:/Users/shant/AppData/Local/nvim/bold-highlights.vim
 
-" Signify Symbols Colors
+""" Signify Symbols Colors
 highlight SignifySignAdd    ctermfg=green   guifg=#b8bb26 cterm=NONE gui=bold
 highlight SignifySignDelete ctermfg=red     guifg=#fb4934 cterm=NONE gui=bold
 highlight SignifySignChange ctermfg=yellow  guifg=#fabd2f cterm=NONE gui=bold
+
+""" Enable native fuzzy file finding
+set path+=**
+
+""" Set ripgrep as default grep program
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 "autocmd BufEnter * silent! lcd %:p:h
 set autochdir
@@ -57,7 +63,7 @@ set whichwrap+=<,>,[,]
 set nocursorline
 
 """ Always show at least one line above/below the cursor.
-set scrolloff=1
+set scrolloff=9
 """ Always show at least one line left/right of the cursor.
 set sidescrolloff=5
 
@@ -119,15 +125,6 @@ set ignorecase
 
 """ Will automatically switch to case sensitive if you use any capitals
 set smartcase
-
-""" netrw configuration
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_banner = 0
-let g:netrw_winsize = 21
-let g:netrw_altfile = 1
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+,\(^\|\s\s\)ntuser\.\S\+'
-autocmd FileType netrw set nolist
 
 """ Always Enter Terminal Buffer in Insert Mode
 """ For Split Term opened with a shortcut

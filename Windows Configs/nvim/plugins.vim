@@ -10,8 +10,6 @@ endif
 call plug#begin('C:/Users/shant/AppData/Local/nvim/plugged')
 Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
-Plug 'Yggdroot/LeaderF',                { 'do': '.\install.bat' }
-Plug 'Shougo/denite.nvim',              { 'do': ':UpdateRemotePlugins' }
 Plug 'lambdalisue/suda.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
@@ -23,9 +21,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm',           { 'on': [ 'FloatermToggle', 'FloatermNew' ] }
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
-Plug 'mbbill/undotree',                 { 'on': 'UndotreeToggle' }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -40,11 +37,9 @@ autocmd VimEnter *
 """ Sourcing the plugins configuration files
 source C:/Users/shant/AppData/Local/nvim/plug-configs/startify.vim                     " startify
 source C:/Users/shant/AppData/Local/nvim/plug-configs/vim-commentary.vim               " vim-commentary
-source C:/Users/shant/AppData/Local/nvim/plug-configs/denite.vim                       " denite
 source C:/Users/shant/AppData/Local/nvim/plug-configs/suda.vim                         " suda
 source C:/Users/shant/AppData/Local/nvim/plug-configs/signify.vim                      " signify
 source C:/Users/shant/AppData/Local/nvim/plug-configs/high-yank.vim                    " highlighted-yank
-source C:/Users/shant/AppData/Local/nvim/plug-configs/undotree.vim                     " undotree
 source C:/Users/shant/AppData/Local/nvim/plug-configs/gruvbox.vim                      " gruvbox
 source C:/Users/shant/AppData/Local/nvim/plug-configs/quickscope.vim                   " quickscope
 source C:/Users/shant/AppData/Local/nvim/plug-configs/sneak.vim                        " sneak
