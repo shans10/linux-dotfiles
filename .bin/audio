@@ -9,14 +9,17 @@ mute_icon="volume-mute.png"       # Volume mute icon
 mic_mute="mic-mute.png"       # Microphone mute icon
 mic_active="mic-active.png"       # Microphone active icon
 
+# Get Active Sink
+SINK=$(pactl list short sinks | grep -e RUNNING -e IDLE | awk {'print $1'} | xargs echo  | cut -d' ' -f2)
+
 # Checking volume level initially so that volume is not raised bayond 100%
-VOL=$(pactl list sinks | awk '/Volume/ { print $12 }' | tr -d %)
+VOL=$(pactl list sinks | awk '/Volume/ { print $12 }' | tr -d % | xargs echo | cut -d' ' -f2)
 
 # Increasing volume
 if [ "$1" = "up" ]; then
     if [ $VOL -lt 100 ]; then
-        pactl set-sink-volume 0 +5%
-        VOL=$(pactl list sinks | awk '/Volume/ { print $12 }' | tr -d %)       # Getting volume after increment
+        pactl set-sink-volume $SINK +5%
+        VOL=$(pactl list sinks | awk '/Volume/ { print $12 }' | tr -d % | xargs echo | cut -d' ' -f2)       # Getting volume after increment
         j=$((VOL/25))       # Calculating icon index based on volume level(icon changes after every 25 steps)
         vol_icon=${vol_icons[$j]}       # Selecting icon based on calculated index
         if [ $VOL -eq 100 ]; then
@@ -32,8 +35,8 @@ fi
 
 # Decreasing volume
 if [ "$1" = "down" ]; then
-    pactl set-sink-volume 0 -5%
-    VOL=$(pactl list sinks | awk '/Volume/ { print $12 }' | tr -d %)   # Getting volume after decrement
+    pactl set-sink-volume $SINK -5%
+    VOL=$(pactl list sinks | awk '/Volume/ { print $12 }' | tr -d % | xargs echo | cut -d' ' -f2)   # Getting volume after decrement
     j=$((VOL/25))       # Calculating icon index based on volume level(icon changes after every 25 steps)
     vol_icon=${vol_icons[$j]}       # Selecting icon based on calculated index
     dunstify -u low -r 90209 -i $path$vol_icon "Volume is at $(printf %i%% $VOL)"       # Notification with volume after decrement
@@ -41,8 +44,8 @@ fi
 
 # Toggle mute
 if [ "$1" = "mute" ]; then
-    pactl set-sink-mute 0 toggle
-    MUTE_STATE=$(pactl list sinks | awk '/Mute/ { print $2 }')       # Getting mute state after toggle
+    pactl set-sink-mute $SINK toggle
+    MUTE_STATE=$(pactl list sinks | awk '/Mute/ { print $2 }' | xargs echo | cut -d' ' -f2)       # Getting mute state after toggle
     if [ $MUTE_STATE = 'no' ]; then
         j=$((VOL/25))       # Calculating icon index based on volume level(icon changes after every 25 steps)
         vol_icon=${vol_icons[$j]}       # Selecting icon based on calculated index
