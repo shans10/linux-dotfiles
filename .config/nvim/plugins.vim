@@ -22,7 +22,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm',           { 'on': [ 'FloatermToggle', 'FloatermNew' ] }
 Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRefresh' ] }
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
 " Plug 'rrethy/vim-hexokinase',           { 'do': 'make hexokinase', 'on': 'HexokinaseTurnOn' }
 Plug 'mbbill/undotree',                 { 'on': 'UndotreeToggle' }
