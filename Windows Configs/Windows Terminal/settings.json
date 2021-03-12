@@ -206,7 +206,9 @@
             "brightCyan": "#60fdff",
             "brightWhite": "#ffffff",
             "background": "#101116",
-            "foreground": "#00a2ff"
+            "foreground": "#00a2ff",
+            "selectionBackground": "#c1deff",
+            "cursorColor": "#76ff9f"
         },
         {
             // Color Scheme: Ubuntu
@@ -250,7 +252,9 @@
             "brightCyan": "#67fff0",
             "brightWhite": "#ffffff",
             "background": "#0e1019",
-            "foreground": "#fffaf4"
+            "foreground": "#fffaf4",
+            "selectionBackground": "#002a3b",
+            "cursorColor": "#ff0018"
         },
         {
             // Color Scheme: Banana Blueberry
@@ -272,7 +276,9 @@
             "brightCyan": "#bcf3ff",
             "brightWhite": "#ffffff",
             "background": "#191323",
-            "foreground": "#cccccc"
+            "foreground": "#cccccc",
+            "selectionBackground": "#220525",
+            "cursorColor": "#e07d13"
         },
         {
             // Color Scheme: Gruvbox
