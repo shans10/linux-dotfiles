@@ -59,7 +59,7 @@ set whichwrap+=<,>,[,]
 set nocursorline
 
 """ Always show at least one line above/below the cursor.
-set scrolloff=1
+set scrolloff=9
 """ Always show at least one line left/right of the cursor.
 set sidescrolloff=5
 

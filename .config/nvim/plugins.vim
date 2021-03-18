@@ -8,7 +8,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'junegunn/fzf',                    { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
@@ -24,7 +25,6 @@ Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRef
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
-" Plug 'rrethy/vim-hexokinase',           { 'do': 'make hexokinase', 'on': 'HexokinaseTurnOn' }
 Plug 'mbbill/undotree',                 { 'on': 'UndotreeToggle' }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -39,6 +39,7 @@ autocmd VimEnter *
 
 """ Sourcing the plugins configuration files
 
+source ~/.config/nvim/plug-configs/lsp-config.vim                   " nvim-lspconfig
 source ~/.config/nvim/plug-configs/startify.vim                     " startify
 source ~/.config/nvim/plug-configs/vim-commentary.vim               " vim-commentary
 source ~/.config/nvim/plug-configs/fzf.vim                          " fzf
@@ -51,7 +52,6 @@ source ~/.config/nvim/plug-configs/gruvbox.vim                      " gruvbox
 source ~/.config/nvim/plug-configs/quickscope.vim                   " quickscope
 source ~/.config/nvim/plug-configs/sneak.vim                        " sneak
 source ~/.config/nvim/plug-configs/floaterm.vim                     " floaterm
-source ~/.config/nvim/plug-configs/coc.vim                          " coc
 source ~/.config/nvim/plug-configs/airline.vim                      " airline
 source ~/.config/nvim/plug-configs/nerdtree.vim                     " NERDTree
 

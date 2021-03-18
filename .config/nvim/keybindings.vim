@@ -5,11 +5,23 @@
 nmap <M-t> :15new term://fish<CR>
 imap <M-t> :15new term://fish<CR>
 tmap <M-t> :15new term://fish<CR>
+nmap <leader>tt :15new term://fish<CR>
 
 "" Full
-nmap <M-S-t> :term=fish<CR>
-imap <M-S-t> :term=fish<CR>
-tmap <M-S-t> :term=fish<CR>
+nmap <M-S-t> :term<CR>
+imap <M-S-t> :term<CR>
+tmap <M-S-t> :term<CR>
+nmap <leader>tf :term<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Inbuilt fuzzy finding
+" Find file
+noremap <leader>ff :find<space>
+noremap <leader>fc :find <cword> <CR>
+
+" Find buffer
+noremap <leader>bc :<C-U><C-R>=printf("b %s", "") <CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -26,16 +38,22 @@ map <Leader>tv <C-w>t<C-w>K
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Quit
+nmap <leader>qs :q<CR>
 imap <M-q> <esc>:q<CR>
 nmap <M-q> :q<CR>
 tmap <M-q> <esc>:q<CR>
 
 """ Quit Without Saving
+nmap <leader>qq :q!<CR>
 imap <M-S-q> <esc>:q!<CR>
 nmap <M-S-q> :q!<CR>
 tmap <M-S-q> <esc>:q!<CR>
 
+""" Save
+nmap <leader>ww :w<CR>
+
 """ Save and Quit
+nmap <leader>wq :wq<CR>
 imap <M-w> <esc>:wq<CR>
 nmap <M-w> :wq<CR>
 tmap <M-w> <esc>:wq<CR>
@@ -85,11 +103,13 @@ tmap <M-S-b> <esc>:buffers<CR>:buffer<Space>
 
 """ Delete Current Buffer
 nnoremap <M-d> :bd<CR>
+nnoremap <leader>bs :bd<CR>
 inoremap <M-d> <esc>:bd<CR>
 tmap <M-d> <esc>:bd<CR>
 
 """ Delete Current Buffer without saving
 nnoremap <M-S-d> :bd!<CR>
+nnoremap <leader>bd :bd!<CR>
 inoremap <M-S-d> <esc>:bd!<CR>
 tmap <M-S-d> <esc>:bd!<CR>
 
@@ -242,6 +262,7 @@ tnoremap <Esc> <C-\><C-n>
 """ Manually refresh file
 nmap <F5> :e!<cr>
 nmap <M-r> :e!<cr>
+nmap <leader>rf :e!<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

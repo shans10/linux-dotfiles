@@ -14,9 +14,9 @@ let g:fzf_buffers_jump = 1
 """ Keybindings
 map <leader>ff :Files<CR>
 map <leader>fz :FZF<CR>
-map <leader>b :Buffers<CR>
-map <leader>ll :Lines<CR>
-map <leader>lb :BLines<CR>
+map <leader>fb :Buffers<CR>
+map <leader>fl :Lines<CR>
+map <leader>fi :BLines<CR>
 " nnoremap <leader>ag :Ag<CR>
 nnoremap <leader>rg :Rg<CR>
 " nnoremap <silent> <Leader>ac :Ag <C-R><C-W><CR>
