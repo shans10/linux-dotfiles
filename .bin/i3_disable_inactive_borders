@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 i3subscribe window | while read -r event; do
     i3-msg '[class="^.*"] border none';

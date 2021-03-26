@@ -135,6 +135,9 @@ set TERM "xterm-256color"           # Sets the terminal type
 set EDITOR "alacritty -e nvim"      # $EDITOR use Neovim in terminal
 set VISUAL "nvim-qt"                # $VISUAL use Neovim-Qt
 
+
+### ADDITIONAL CONFIGURATION ###
+
 # Zoxide(z style cd)
 zoxide init fish | source
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Wired connection
 WIRED_STATE=$(nmcli -p d | awk '/enp1s0/{print $3; exit}')
@@ -7,7 +7,7 @@ WIRED_STATE=$(nmcli -p d | awk '/enp1s0/{print $3; exit}')
 WIFI_STATE=$(nmcli -p d | awk '/wlp2s0/{print $3; exit}')
 
 # Getting wifi SSID
-WIFI=$(iwgetid -r)
+WIFI=$(nmcli -t -f NAME c show --active)
 
 # Wired connection status
 if [ $WIRED_STATE = 'connected' ]; then

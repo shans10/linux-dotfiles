@@ -29,8 +29,8 @@
 ; (setq doom-theme 'doom-monokai-pro)
 (if (not (display-graphic-p))
       (setq doom-theme 'doom-monokai-pro)
-  (setq doom-theme 'doom-monokai-spectrum)
-  ;; (setq doom-gruvbox-dark-variant "hard")
+  (setq doom-theme 'doom-gruvbox)
+  (setq doom-gruvbox-dark-variant "hard")
   )
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -59,24 +59,47 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Flycheck Settings
+;;; FLYCHECK ;;;
+;; Check syntax on idle
 (after! flycheck
   (setq flycheck-check-syntax-automatically '(idle-change)))
 
-;; LOAD PACKAGES
-;; Change cursor in insert mode in terminal
-(use-package! evil-terminal-cursor-changer
-  :hook (tty-setup . evil-terminal-cursor-changer-activate))
+;; Disable default fringe styling
+(setq +vc-gutter-default-style nil)
 
-;; Load Keybindings File
-(load! "keybindings")
+;; Move flycheck to left margin
+(setq-default flycheck-indication-mode 'left-fringe)
 
-;; Start Emacs Maximized
-(add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
+;;; LSP ;;;
+;; Disable code action hints in sideline
+(setq lsp-ui-sideline-show-code-actions nil)
+
+;; Headerline Settings
+(setq lsp-headerline-breadcrumb-enable t)                           ; Enable headerline
+(setq lsp-headerline-breadcrumb-segments '(project file symbols))   ; Set segments
+(setq lsp-headerline-breadcrumb-icons-enable t)                     ; Enable Icons
+
+
+;;; NEOTREE ;;;
 ;; Show File Icons in Neotree
 (after! doom-themes
   (remove-hook 'doom-load-theme-hook #'doom-themes-neotree-config))
 
+
+;;; DOOM MODELINE ;;;
 ;; Show major mode icon in doom modeline(filetype icon)
 (setq doom-modeline-major-mode-icon t)
+
+;; Disable code actions in doom modeline
+(setq lsp-modeline-code-actions-enable nil)
+
+
+;;; LOAD PACKAGES ;;;
+;; Change cursor in insert mode in terminal
+(use-package! evil-terminal-cursor-changer
+  :hook (tty-setup . evil-terminal-cursor-changer-activate))
+
+;;; LOAD CUSTOME FILES ;;;
+;; Keybindings File
+(load! "keybindings")

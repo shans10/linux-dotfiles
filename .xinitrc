@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -57,13 +57,19 @@ udiskie &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Lock on lid close
-# xss-lock slimlock --ignore-sleep &
+xss-lock slimlock &
 
 # Automatically Hide Cursor
 unclutter &
 
-# mconnect daemon
-# mconnect -d &
+# Mconnect Daemon
+mconnect -d &
+
+# Powertop Autotune
+# sudo powertop --auto-tune
+
+# Bluetooth Tray Applet
+blueman-applet &
 
 # For jettbrains ide
 export _JAVA_AWT_WM_NONREPARENTING=1

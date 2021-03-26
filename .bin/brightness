@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ### This script increases/decreases brightness(using "light" commandline application) and gives a notification(using dunstify)!
 

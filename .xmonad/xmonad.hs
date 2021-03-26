@@ -14,6 +14,7 @@ import Data.Monoid
 import Data.Maybe (isJust, maybeToList)
 import Data.List
 import qualified Data.Map as M
+import Data.Semigroup
 
     -- Utilities
 import XMonad.Util.Loggers
@@ -29,6 +30,7 @@ import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, Toggl
 import XMonad.Hooks.ManageHelpers (isDialog,  doFullFloat, doCenterFloat, doRectFloat)
 import XMonad.Hooks.EwmhDesktops   -- required for xcomposite in obs to work
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.DynamicProperty
 
     -- Actions
 import XMonad.Actions.Minimize (minimizeWindow)
@@ -124,7 +126,6 @@ sXPConfig = def
       , defaultText         = []
       , autoComplete        = Nothing  -- set Just 100000 for .1 sec
       , showCompletionOnTab = False
-      -- , searchPredicate     = isPrefixOf
       , searchPredicate     = fuzzyMatch
       , alwaysHighlight     = True
       , maxComplRows        = Just 15      -- set to Just 5 for 5 rows
@@ -229,6 +230,7 @@ myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm                               -- Terminal(st)
                 , NS "pulse" spawnPulse findPulse managePulse                               -- Pavucontrol
                 , NS "calculator" spawnCalculator findCalculator manageCalculator           -- Calculator
+                , NS "music" spawnMusic findMusic manageMusic                               -- Music
                 ]
   where
     spawnTerm  = myTerminal ++ " -n scratchpad"
@@ -252,6 +254,15 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm                   
     spawnCalculator  = "qalculate-gtk"
     findCalculator   = resource =? "qalculate-gtk"
     manageCalculator = customFloating $ W.RationalRect l t w h
+               where
+                 h = 0.9
+                 w = 0.9
+                 t = 0.95 -h
+                 l = 0.95 -w
+
+    spawnMusic  = "flatpak run com.spotify.Client"
+    findMusic   = resource =? "spotify"
+    manageMusic = customFloating $ W.RationalRect l t w h
                where
                  h = 0.9
                  w = 0.9
@@ -416,6 +427,7 @@ myKeys =
 
     -- Windows
         , ("M-S-c", kill1)                                 -- Kill the currently focused client
+        , ("M-q", kill1)                                   -- Kill the currently focused client
         , ("M-M1-a", killAll)                              -- Kill all the windows on current workspace
         , ("M-C-a", toggleCopyToAll)                       -- Copy/Delete window to/from all other workspaces
         , ("M-S-a", killAllOtherCopies)                    -- Kill all the copies of focused window
@@ -452,7 +464,7 @@ myKeys =
     -- Layouts
         , ("M-C-m", sendMessage $ Toggle NBFULL)                               -- Toggle Monocle Layout
         , ("M-S-<Space>", sendMessage NextLayout)                              -- Switch to next layout
-        , ("M-S-n", sendMessage $ Toggle NOBORDERS)                            -- Toggles noborder
+        , ("M-C-n", sendMessage $ Toggle NOBORDERS)                            -- Toggles noborder
         , ("M-C-f", sendMessage (Toggle NBFULL) >> sendMessage ToggleStruts)   -- Toggles fullscreen
         , ("M-<Space>", withFocused toggleFloat)                               -- Toggle a window between floating and tiling states
         , ("M-S-x", sendMessage $ Toggle REFLECTX)                             -- Swap master/stack positions horizontally
@@ -469,6 +481,7 @@ myKeys =
         , ("M-<Return>", namedScratchpadAction myScratchPads "terminal")       -- Terminal
         , ("M1-C-p", namedScratchpadAction myScratchPads "pulse")              -- Pavucontrol
         , ("M1-C-c", namedScratchpadAction myScratchPads "calculator")         -- Qalculator-gtk
+        , ("M1-C-s", namedScratchpadAction myScratchPads "music")              -- Spotify
 
     -- Bar Toggle
         , ("M-b", sendMessage ToggleStruts)         -- Hide Xmobar
@@ -480,7 +493,8 @@ myKeys =
     -- My Applications
         , ("M-S-f", spawn "firefox")                       -- Firefox browser
         , ("M-g", spawn "google-chrome-stable")            -- Google chrome browser
-        , ("M-n", spawn "st -e nvim")                      -- Neovim text editor
+        , ("M-n", spawn "nvim-qt")                         -- Neovim(GUI) text editor
+        , ("M-S-n", spawn "st -e nvim")                    -- Neovim(Terminal) text editor
         , ("M-e", spawn "emacs")                           -- Emacs text editor
         , ("M-r", spawn "st -e ranger")                    -- Ranger file manager
         , ("M-f", spawn "nemo")                            -- Nemo file manager
@@ -502,6 +516,18 @@ myKeys =
         ++ [("M-w " ++ k, windowPrompt sXPConfig f allWindows) | (k,f) <- windowPromptList ]
 
 ------------------------------------------------------------------------
+---SPOTIFY SCRATCHPAD SETTINGS
+------------------------------------------------------------------------
+myHandleEventHook :: Event -> X All
+myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "Spotify" --> floating)
+                where floating = customFloating $ W.RationalRect l t w h
+                             where
+                                h = 0.9
+                                w = 0.9
+                                t = 0.95 -h
+                                l = 0.95 -w
+
+------------------------------------------------------------------------
 ---MAIN
 ------------------------------------------------------------------------
 main :: IO ()
@@ -513,7 +539,7 @@ main = do
         { manageHook         = myManageHook <+> manageDocks
         , startupHook        = myStartupHook
         , layoutHook         = myLayoutHook
-        , handleEventHook    = docksEventHook <+> fullscreenEventHook
+        , handleEventHook    = docksEventHook <+> fullscreenEventHook <+> myHandleEventHook
         , modMask            = myModMask
         , terminal           = myTerminal
         , focusFollowsMouse  = True

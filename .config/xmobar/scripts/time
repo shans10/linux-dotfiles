@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 TIME_ICON=''
 TIME=$(date '+%I:%M %p')

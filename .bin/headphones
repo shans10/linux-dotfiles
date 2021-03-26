@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ### This script gives a notification(using dunstify) with current volume when headphones are connected and when they are removed!
 
