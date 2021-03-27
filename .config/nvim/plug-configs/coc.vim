@@ -141,13 +141,19 @@ nnoremap <silent> <space>lw  :<C-u>CocList words<cr>
 nnoremap <silent> <space>lg  :<C-u>CocList grep<cr>
 
 "" Show floaterms.
-nnoremap <silent> <space>lt  :<C-u>CocList floaterm<cr>
+nnoremap <silent> <space>la  :<C-u>CocList floaterm<cr>
+
+"" Show tags.
+nnoremap <silent> <space>lt  :<C-u>CocList tags<cr>
 
 "" Show buffers.
 nnoremap <silent> <space>lb  :<C-u>CocList buffers<cr>
 
 """ Codelens
 nmap <silent> <leader>cl :CocAction codelens<CR>
+
+""" Generate Tags
+nmap <silent> <leader>gt :CocCommand tags.generate<CR>
 
 """ Snippets
 "" Use <C-l> for trigger snippet expand.
@@ -164,4 +170,3 @@ let g:coc_snippet_prev = '<c-k>'
 
 "" Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-

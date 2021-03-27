@@ -8,7 +8,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'neoclide/coc.nvim', 		{'branch': 'release'}
+Plug 'neoclide/coc.nvim',               {'branch': 'release'}
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'junegunn/fzf',                    { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
@@ -20,11 +20,14 @@ Plug 'unblevable/quick-scope'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm',           { 'on': [ 'FloatermToggle', 'FloatermNew' ] }
-Plug 'vim-airline/vim-airline' ",         { 'on': [ 'AirlineToggle', 'AirlineRefresh' ] }
+Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
 Plug 'mbbill/undotree',                 { 'on': 'UndotreeToggle' }
+Plug 'turbio/bracey.vim',               {'do': 'npm install --prefix server'}
+Plug 'rrethy/vim-hexokinase',           { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -38,7 +41,6 @@ autocmd VimEnter *
 
 """ Sourcing the plugins configuration files
 
-source ~/.config/nvim/plug-configs/coc.nvim                         " coc
 source ~/.config/nvim/plug-configs/startify.vim                     " startify
 source ~/.config/nvim/plug-configs/vim-commentary.vim               " vim-commentary
 source ~/.config/nvim/plug-configs/fzf.vim                          " fzf

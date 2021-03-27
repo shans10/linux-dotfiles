@@ -12,7 +12,7 @@ let g:ascii = [
             \]
 
 let g:startify_custom_header = g:ascii
-let g:startify_session_dir = '~/.config/nvim/sessions'
+let g:startify_session_dir = '~/.nvim/sessions'
 
 let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']                     },

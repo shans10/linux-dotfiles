@@ -56,10 +56,10 @@ set splitright
 set whichwrap+=<,>,[,]
 
 """ Highlight the line on which the cursor lives.
-set nocursorline
+set cursorline
 
 """ Always show at least one line above/below the cursor.
-set scrolloff=9
+set scrolloff=15
 """ Always show at least one line left/right of the cursor.
 set sidescrolloff=5
 

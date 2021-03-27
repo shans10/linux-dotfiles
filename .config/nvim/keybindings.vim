@@ -17,7 +17,7 @@ nmap <leader>tf :term<CR>
 
 """ Inbuilt fuzzy finding
 " Find file
-noremap <leader>ff :find<space>
+noremap <leader>fd :find<space>
 noremap <leader>fc :find <cword> <CR>
 
 " Find buffer
@@ -284,5 +284,10 @@ nmap <M-f> <C-f><CR>
 
 """ Source Config
 nnoremap <leader>so :so %<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Toggle Tagbar
+nnoremap <leader>tb :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
