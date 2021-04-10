@@ -26,7 +26,6 @@ Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle
 Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
 Plug 'mbbill/undotree',                 { 'on': 'UndotreeToggle' }
-Plug 'turbio/bracey.vim',               {'do': 'npm install --prefix server'}
 Plug 'rrethy/vim-hexokinase',           { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -41,6 +40,7 @@ autocmd VimEnter *
 
 """ Sourcing the plugins configuration files
 
+source ~/.config/nvim/plug-configs/coc.vim                          " coc
 source ~/.config/nvim/plug-configs/startify.vim                     " startify
 source ~/.config/nvim/plug-configs/vim-commentary.vim               " vim-commentary
 source ~/.config/nvim/plug-configs/fzf.vim                          " fzf

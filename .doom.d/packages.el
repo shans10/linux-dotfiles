@@ -51,3 +51,4 @@
 
 ;; Change cursor shape in insert mode in terminal
 (package! evil-terminal-cursor-changer)
+(package! lsp-treemacs)

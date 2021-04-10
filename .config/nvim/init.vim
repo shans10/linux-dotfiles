@@ -93,7 +93,7 @@ map <Space> <Leader>
 set noswapfile
 set nobackup
 set nowritebackup
-set undodir=~/.config/nvim/undodir
+set undodir=~/.nvim/undodir
 set undofile
 
 """ Indentation
