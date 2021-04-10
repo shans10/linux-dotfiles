@@ -60,10 +60,10 @@ set splitright
 set whichwrap+=<,>,[,]
 
 """ Highlight the line on which the cursor lives.
-set nocursorline
+set cursorline
 
 """ Always show at least one line above/below the cursor.
-set scrolloff=9
+set scrolloff=15
 """ Always show at least one line left/right of the cursor.
 set sidescrolloff=5
 
@@ -97,7 +97,7 @@ map <Space> <Leader>
 set noswapfile
 set nobackup
 set nowritebackup
-set undodir=C:/Users/shant/AppData/Local/nvim/undodir
+set undodir=C:/Users/shant/nvim/undodir
 set undofile
 
 """ Indentation
@@ -122,6 +122,9 @@ set mouse=a
 
 """ Case insensitive searching
 set ignorecase
+
+""" Disable highlight after search
+set nohlsearch
 
 """ Will automatically switch to case sensitive if you use any capitals
 set smartcase

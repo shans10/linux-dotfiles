@@ -7,7 +7,7 @@ if empty(glob('C:/Users/shant/AppData/Local/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('C:/Users/shant/AppData/Local/nvim/plugged')
+call plug#begin('C:/Users/shant/nvim/plugged')
 Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'lambdalisue/suda.vim'
@@ -20,6 +20,7 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm',           { 'on': [ 'FloatermToggle', 'FloatermNew' ] }
 Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdtree',              { 'on': [ 'NERDTreeCWD', 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
@@ -35,6 +36,7 @@ autocmd VimEnter *
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Sourcing the plugins configuration files
+source C:/Users/shant/AppData/Local/nvim/plug-configs/coc.vim                          " coc
 source C:/Users/shant/AppData/Local/nvim/plug-configs/startify.vim                     " startify
 source C:/Users/shant/AppData/Local/nvim/plug-configs/vim-commentary.vim               " vim-commentary
 source C:/Users/shant/AppData/Local/nvim/plug-configs/suda.vim                         " suda
@@ -44,7 +46,6 @@ source C:/Users/shant/AppData/Local/nvim/plug-configs/gruvbox.vim               
 source C:/Users/shant/AppData/Local/nvim/plug-configs/quickscope.vim                   " quickscope
 source C:/Users/shant/AppData/Local/nvim/plug-configs/sneak.vim                        " sneak
 source C:/Users/shant/AppData/Local/nvim/plug-configs/floaterm.vim                     " floaterm
-source C:/Users/shant/AppData/Local/nvim/plug-configs/coc.vim                          " coc
 source C:/Users/shant/AppData/Local/nvim/plug-configs/airline.vim                      " airline
 source C:/Users/shant/AppData/Local/nvim/plug-configs/nerdtree.vim                     " NERDTree
 

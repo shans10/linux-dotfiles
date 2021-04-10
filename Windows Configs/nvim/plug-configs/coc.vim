@@ -22,6 +22,7 @@ let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-clangd',
     \ 'coc-rls',
+    \ 'coc-highlight'
     \ ]
 
 """ Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
@@ -59,8 +60,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
 
 """ Use K to show documentation in preview window.
 nnoremap <silent> gh :call <SID>show_documentation()<CR>
@@ -141,13 +142,19 @@ nnoremap <silent> <space>lw  :<C-u>CocList words<cr>
 nnoremap <silent> <space>lg  :<C-u>CocList grep<cr>
 
 "" Show floaterms.
-nnoremap <silent> <space>lt  :<C-u>CocList floaterm<cr>
+nnoremap <silent> <space>la  :<C-u>CocList floaterm<cr>
+
+"" Show tags.
+nnoremap <silent> <space>lt  :<C-u>CocList tags<cr>
 
 "" Show buffers.
 nnoremap <silent> <space>lb  :<C-u>CocList buffers<cr>
 
 """ Codelens
 nmap <silent> <leader>cl :CocAction codelens<CR>
+
+""" Generate Tags
+nmap <silent> <leader>gt :CocCommand tags.generate<CR>
 
 """ Snippets
 "" Use <C-l> for trigger snippet expand.
