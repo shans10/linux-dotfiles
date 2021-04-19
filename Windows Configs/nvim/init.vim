@@ -67,8 +67,13 @@ set scrolloff=15
 """ Always show at least one line left/right of the cursor.
 set sidescrolloff=5
 
-""" Relative line numbers
+""" Smart Relative line numbers(absolute numbering in insert mode)
 set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 """ Highlight matching pairs of brackets. Use the '%' character to jump between them.
 set matchpairs+=<:>
