@@ -21,17 +21,17 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-; (setq doom-font (font-spec :family "Cascadia Code" :size 13 :weight 'regular))
+(setq doom-font (font-spec :family "Cascadia Code" :size 13 :weight 'regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ; (setq doom-theme 'doom-monokai-pro)
-(if (not (display-graphic-p))
-      (setq doom-theme 'doom-monokai-pro)
-  (setq doom-theme 'doom-gruvbox)
-  (setq doom-gruvbox-dark-variant "hard")
-  )
+; (if (not (display-graphic-p))
+;       (setq doom-theme 'doom-monokai-pro)
+(setq doom-theme 'doom-dracula)
+; (setq doom-gruvbox-dark-variant "hard")
+; )
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -59,10 +59,52 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
+;;; USER SETTINGS ;;;
+;; Open Emacs Maximized
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+
+;; Exit Emacs without vterm running process warning
+(setq confirm-kill-processes nil)
+
+;; Add space from both sides inside braces
+(defun my/c-mode-insert-space (arg)
+  (interactive "*P")
+  (let ((prev (char-before))
+        (next (char-after)))
+    (self-insert-command (prefix-numeric-value arg))
+    (if (and prev next
+             (string-match-p "[[({]" (string prev))
+             (string-match-p "[])}]" (string next)))
+      (save-excursion (self-insert-command 1)))))
+
+(defun my/c-mode-delete-space (arg &optional killp)
+  (interactive "*p\nP")
+  (let ((prev (char-before))
+        (next (char-after))
+        (pprev (char-before (- (point) 1))))
+    (if (and prev next pprev
+             (char-equal prev ?\s) (char-equal next ?\s)
+             (string-match "[[({]" (string pprev)))
+      (delete-char 1))
+    (backward-delete-char-untabify arg killp)))
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (local-set-key " " 'my/c-mode-insert-space)
+            (local-set-key "\177" 'my/c-mode-delete-space)))
+
+
+;;; EVIL SNIPE ;;;
+(setq evil-snipe-scope 'visible)
+(setq evil-snipe-repeat-scope 'whole-visible)
+(setq evil-snipe-spillover-scope 'whole-buffer)
+
+
 ;;; FLYCHECK ;;;
 ;; Check syntax on idle
 (after! flycheck
-  (setq flycheck-check-syntax-automatically '(idle-change)))
+        (setq flycheck-check-syntax-automatically '(idle-change)))
 
 ;; Disable default fringe styling
 (setq +vc-gutter-default-style nil)
@@ -76,15 +118,15 @@
 (setq lsp-ui-sideline-show-code-actions nil)
 
 ;; Headerline Settings
-(setq lsp-headerline-breadcrumb-enable t)                           ; Enable headerline
-(setq lsp-headerline-breadcrumb-segments '(project file symbols))   ; Set segments
-(setq lsp-headerline-breadcrumb-icons-enable t)                     ; Enable Icons
+; (setq lsp-headerline-breadcrumb-enable t)                           ; Enable headerline
+; (setq lsp-headerline-breadcrumb-segments '(project file symbols))   ; Set segments
+; (setq lsp-headerline-breadcrumb-icons-enable t)                     ; Enable Icons
 
 
 ;;; NEOTREE ;;;
 ;; Show File Icons in Neotree
 (after! doom-themes
-  (remove-hook 'doom-load-theme-hook #'doom-themes-neotree-config))
+        (remove-hook 'doom-load-theme-hook #'doom-themes-neotree-config))
 
 
 ;;; DOOM MODELINE ;;;
@@ -98,7 +140,7 @@
 ;;; LOAD PACKAGES ;;;
 ;; Change cursor in insert mode in terminal
 (use-package! evil-terminal-cursor-changer
-  :hook (tty-setup . evil-terminal-cursor-changer-activate))
+              :hook (tty-setup . evil-terminal-cursor-changer-activate))
 
 ;;; LOAD CUSTOME FILES ;;;
 ;; Keybindings File

@@ -51,4 +51,6 @@
 
 ;; Change cursor shape in insert mode in terminal
 (package! evil-terminal-cursor-changer)
-(package! lsp-treemacs)
+
+;; Enable lsp-headerline-breadcrumb icons
+; (package! lsp-treemacs)
