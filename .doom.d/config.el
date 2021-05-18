@@ -29,8 +29,8 @@
 ; (setq doom-theme 'doom-monokai-pro)
 ; (if (not (display-graphic-p))
 ;       (setq doom-theme 'doom-monokai-pro)
-(setq doom-theme 'doom-dracula)
-; (setq doom-gruvbox-dark-variant "hard")
+(setq doom-theme 'doom-gruvbox)
+(setq doom-gruvbox-dark-variant "hard")
 ; )
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -62,7 +62,8 @@
 
 ;;; USER SETTINGS ;;;
 ;; Open Emacs Maximized
-(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+; (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 ;; Exit Emacs without vterm running process warning
 (setq confirm-kill-processes nil)
@@ -93,6 +94,20 @@
           (lambda ()
             (local-set-key " " 'my/c-mode-insert-space)
             (local-set-key "\177" 'my/c-mode-delete-space)))
+
+;; Fix doom-modeline flycheck icon out of view in emacsclient
+(add-hook! 'doom-modeline-mode-hook
+  (let ((char-table char-width-table))
+    (while (setq char-table (char-table-parent char-table)))
+    (dolist (pair doom-modeline-rhs-icons-alist)
+      (let ((width 2)  ; <-- tweak this
+            (chars (cdr pair))
+            (table (make-char-table nil)))
+        (dolist (char chars)
+          (set-char-table-range table char width))
+        (optimize-char-table table)
+        (set-char-table-parent table char-table)
+        (setq char-width-table table)))))
 
 
 ;;; EVIL SNIPE ;;;

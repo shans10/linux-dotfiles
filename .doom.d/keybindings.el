@@ -7,19 +7,5 @@
 (map! :n "gh" #'lsp-ui-doc-glance)
 
 ;; Use jj to toggle back to normal mode from insert mode
-(defun my-jk ()
-  (interactive)
-  (let* ((initial-key ?j)
-         (final-key ?j)
-         (timeout 0.7)
-         (event (read-event nil nil timeout)))
-    (if event
-        ;; timeout met
-        (if (and (characterp event) (= event final-key))
-            (evil-normal-state)
-          (insert initial-key)
-          (push event unread-command-events))
-      ;; timeout exceeded
-      (insert initial-key))))
-
-(define-key evil-insert-state-map (kbd "j") 'my-jk)
+(setq-default evil-escape-key-sequence "jj")
+(setq-default evil-escape-delay 0.5)
