@@ -129,6 +129,9 @@
 
 
 ;;; LSP ;;;
+;; Disable doc hover information unless key pressed
+(setq lsp-ui-doc-enable nil)
+
 ;; Disable code action hints in sideline
 (setq lsp-ui-sideline-show-code-actions nil)
 
