@@ -107,6 +107,17 @@ alias search='sudo dnf search'
 alias autoremove='sudo dnf autoremove'
 
 
+## OPENSUSE
+# Aliases for package management
+alias up='sudo zypper up'
+alias in='sudo zypper in'
+alias se='sudo zypper se'
+alias dup='sudo zypper dup'
+alias rem='sudo zypper rm'
+alias ref='sudo zypper refresh'
+alias red='sudo zypper rm --clean-deps'
+
+
 ## CLEAR LINUX
 # Aliases for package managment(swupd)
 alias update='sudo swupd update'
@@ -128,12 +139,18 @@ alias initramfs-gen='sudo mkinitcpio -p linux'
 # Set feh background and default image size
 # alias feh='feh --image-bg "#1d2021" --scale-down --auto-zoom'
 
+# Replace ls with exa
+alias ls=exa
+
+# Alias for edit command
+alias edit='emacsclient -cn -a emacs'
+
 
 ### SETTING FISH ENVIRONMENT VARIABLES ###
 
-set TERM "xterm-256color"           # Sets the terminal type
-set EDITOR "alacritty -e nvim"      # $EDITOR use Neovim in terminal
-set VISUAL "nvim-qt"                # $VISUAL use Neovim-Qt
+set -gx TERM "xterm-256color"               # Sets the terminal type
+set -gx EDITOR "alacritty -e nvim"          # $EDITOR use Neovim in terminal
+set -gx VISUAL "emacsclient -cn -a emacs"   # $VISUAL use Emacs
 
 
 ### ADDITIONAL CONFIGURATION ###
