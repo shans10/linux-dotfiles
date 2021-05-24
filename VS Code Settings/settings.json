@@ -1,16 +1,10 @@
 {
     "workbench.startupEditor": "newUntitledFile",
     "errorLens.addNumberOfDiagnostics": true,
-    "editor.fontFamily": "Hack NF",
-    "editor.fontSize": 13,
-    "terminal.integrated.fontSize": 13,
-    "code-runner.saveFileBeforeRun": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.clearPreviousOutput": true,
-    "terminal.integrated.shellArgs.windows": "-nologo",
-    "vim.neovimPath": "C:\\Users\\shant\\scoop\\apps\\neovim\\current\\bin\\nvim.exe",
+    "editor.fontFamily": "'Cascadia Code', 'Hack NF'",
+    "window.titleBarStyle": "custom",
     "errorLens.gutterIconsEnabled": true,
-    "vim.leader": ",",
+    "vim.leader": "<space>",
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "editor.minimap.enabled": false,
@@ -33,8 +27,44 @@
                 "w"
             ],
             "commands": [
-                "workbench.action.files.save",
+                "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "o"
             ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "q"
+            ],
+            "commands": [
+                ":q"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "a"
+            ],
+            "commands": [
+                "workbench.action.toggleActivityBarVisibility"
+            ]
         },
         {
             "before": [
@@ -42,8 +72,73 @@
                 "e"
             ],
             "commands": [
-                "workbench.action.toggleSidebarVisibility",
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "s"
             ],
+            "commands": [
+                "workbench.view.search"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "n"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "n"
+            ],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "p"
+            ],
+            "commands": [
+                "editor.action.marker.prevInFiles"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "i",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "c",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
         },
         {
             "before": [
@@ -97,5 +192,162 @@
                 "G"
             ]
         },
-    ]
+        {
+            "before": [
+                "<Leader>",
+                "s",
+                "a"
+            ],
+            "after": [
+                "g",
+                "g",
+                "V",
+                "G"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l",
+                "e"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l",
+                "b"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l",
+                "w"
+            ],
+            "after": [
+                "0"
+            ]
+        },
+        {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Leader>",
+                "i"
+            ],
+            "after": [
+                "g",
+                "g",
+                "=",
+                "G"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "s",
+                "a"
+            ],
+            "after": [
+                "g",
+                "g",
+                "V",
+                "G"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l",
+                "e"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l",
+                "b"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l",
+                "w"
+            ],
+            "after": [
+                "0"
+            ]
+        }
+    ],
+    "settingsSync.ignoredExtensions": [
+        "ms-vscode-remote.remote-wsl",
+        "ms-dotnettools.csharp",
+        "unity.unity-debug"
+    ],
+    "settingsSync.ignoredSettings": [
+        "editor.fontFamily",
+        "window.titleBarStyle",
+        "window.menuBarVisibility"
+    ],
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "update.mode": "none",
+    "update.showReleaseNotes": false,
+    "files.trimTrailingWhitespace": true,
+    "errorLens.followCursor": "closestProblem",
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.cursorSurroundingLines": 9,
+    "vim.enableNeovim": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 300,
+    "vim.visualstar": true,
+    "vim.whichwrap": "b,s,h,l",
+    "errorLens.statusBarColorsEnabled": true,
+    "errorLens.statusBarMessageEnabled": true,
+    "vim.smartRelativeLine": true,
+    "vim.showMarksInGutter": true,
+    "workbench.editor.showTabs": false,
+    "editor.fontSize": 13,
+    "markdown.preview.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "editor.fontLigatures": true,
+    "editor.renderFinalNewline": false,
+    "editor.scrollBeyondLastLine": false,
+    "workbench.activityBar.visible": false,
 }
