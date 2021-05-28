@@ -343,11 +343,20 @@
     "vim.smartRelativeLine": true,
     "vim.showMarksInGutter": true,
     "workbench.editor.showTabs": false,
-    "editor.fontSize": 13,
     "markdown.preview.fontSize": 13,
-    "terminal.integrated.fontSize": 13,
     "editor.fontLigatures": true,
     "editor.renderFinalNewline": false,
     "editor.scrollBeyondLastLine": false,
-    "workbench.activityBar.visible": false,
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell Core": {
+            "source": "PowerShell",
+            "args": [
+                "-NoLogo"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell Core",
+    "editor.fontSize": 13,
+    "workbench.activityBar.visible": false
 }
