@@ -357,6 +357,5 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell Core",
-    "editor.fontSize": 13,
-    "workbench.activityBar.visible": false
+    "editor.fontSize": 13
 }
