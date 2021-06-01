@@ -13,8 +13,10 @@ let g:fzf_buffers_jump = 1
 
 """ Keybindings
 map <leader>ff :Files<CR>
+map <leader>.  :Files<CR>
 map <leader>fz :FZF<CR>
 map <leader>fb :Buffers<CR>
+map <leader>,  :Buffers<CR>
 map <leader>fl :Lines<CR>
 map <leader>fi :BLines<CR>
 " nnoremap <leader>ag :Ag<CR>

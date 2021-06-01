@@ -19,8 +19,6 @@
   "list.indicator": "",
   "list.selectedSignText": " ",
 
-  "coc.preferences.hoverTarget": "float",
-
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
@@ -41,5 +39,8 @@
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     }
-  }
+  },
+
+  // coc-clangd settings
+  "clangd.arguments": ["-header-insertion=never"]
 }

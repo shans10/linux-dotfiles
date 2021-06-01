@@ -66,7 +66,11 @@
 ; (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 ;; Exit Emacs without vterm running process warning
-(setq confirm-kill-processes nil)
+;; (setq confirm-kill-processes nil)
+
+;; Vim scrolloff alternative
+(setq scroll-step 1)
+(setq scroll-margin 11)
 
 ;; Add space from both sides inside braces
 (defun my/c-mode-insert-space (arg)

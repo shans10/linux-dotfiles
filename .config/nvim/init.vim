@@ -38,7 +38,7 @@ highlight SignifySignDelete ctermfg=red     guifg=#fb4934 cterm=NONE gui=bold
 highlight SignifySignChange ctermfg=yellow  guifg=#fabd2f cterm=NONE gui=bold
 
 "autocmd BufEnter * silent! lcd %:p:h
-set autochdir
+" set autochdir
 set nocompatible
 filetype plugin indent on
 
@@ -67,8 +67,8 @@ set sidescrolloff=5
 set number relativenumber
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
 """ Highlight matching pairs of brackets. Use the '%' character to jump between them.

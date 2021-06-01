@@ -121,7 +121,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 nnoremap <silent> <space>ld  :<C-u>CocList diagnostics<cr>
 
 "" Manage extensions.
-nnoremap <silent> <space>le  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>lx  :<C-u>CocList extensions<cr>
 
 "" Show commands.
 " nnoremap <silent> <space>lc  :<C-u>CocList commands<cr>
@@ -163,11 +163,11 @@ imap <C-l> <Plug>(coc-snippets-expand)
 "" Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
 
-"" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+"" Use 'Tab' for jump to next placeholder, default is 'Ctrl+j'
+let g:coc_snippet_next = '<Tab>'
 
-"" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+"" Use 'Shift+Tab' for jump to previous placeholder, default is 'Ctrl+k'
+let g:coc_snippet_prev = '<S-Tab>'
 
 "" Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
