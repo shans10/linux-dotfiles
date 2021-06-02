@@ -37,8 +37,12 @@ highlight SignifySignAdd    ctermfg=green   guifg=#b8bb26 cterm=NONE gui=bold
 highlight SignifySignDelete ctermfg=red     guifg=#fb4934 cterm=NONE gui=bold
 highlight SignifySignChange ctermfg=yellow  guifg=#fabd2f cterm=NONE gui=bold
 
-"autocmd BufEnter * silent! lcd %:p:h
-" set autochdir
+""" Enable native fuzzy file finding
+set path+=**
+
+""" Set ripgrep as default grep program
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+
 set nocompatible
 filetype plugin indent on
 

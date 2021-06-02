@@ -1,5 +1,5 @@
 {
-  "suggest.completionItemKindLabels": {
+   "suggest.completionItemKindLabels": {
     "text": "t",
     "method": "m",
     "function": ""
@@ -19,15 +19,9 @@
   "list.indicator": "",
   "list.selectedSignText": " ",
 
-  // coc-emmet
-  "emmet.excludeLanguages": [""],
-
-  "coc.preferences.hoverTarget": "float",
-
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
-  "python.jediEnabled": false,
 
   // snippets
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snips"],
@@ -42,17 +36,11 @@
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
-      "filetypes": ["sh"]
-      //"ignoredRootPaths": ["~"]
-    },
-    "lua": {
-      "command": "java",
-      "args": [
-        "-jar",
-        "C:/Users/shant/EmmyLua-LanguageServer/EmmyLua-LS/build/libs/EmmyLua-LS-all.jar"
-      ],
-      "filetypes": ["lua"],
-      "rootPatterns": [".git/"]
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     }
-  }
+  },
+
+  // coc-clangd settings
+  "clangd.arguments": ["-header-insertion=never"]
 }

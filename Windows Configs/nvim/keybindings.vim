@@ -1,36 +1,27 @@
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  " Personal Keybindings " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Term
 "" Split
+nmap <M-t> :15new term://pwsh -nologo<CR>
+imap <M-t> :15new term://pwsh -nologo<CR>
+tmap <M-t> :15new term://pwsh -nologo<CR>
 nmap <leader>tt :15new term://pwsh -nologo<CR>
 
 "" Full
+nmap <M-S-t> :term=pwsh -nologo<CR>
+imap <M-S-t> :term=pwsh -nologo<CR>
+tmap <M-S-t> :term=pwsh -nologo<CR>
 nmap <leader>tf :term=pwsh -nologo<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Inbuilt fuzzy finding
 " Find file
-noremap <leader>ff :find<space>
+noremap <leader>fd :find<space>
 noremap <leader>fc :find <cword> <CR>
 
 " Find buffer
 noremap <leader>bc :<C-U><C-R>=printf("b %s", "") <CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""" Vim Grep Keybindings
-" Search word
-nnoremap <leader>gw :grep<space>
-nnoremap <leader>gr :cwindow<CR>
-
-" Search word under cursor
-nnoremap <leader>gc :grep <cword><CR>:cwindow<CR>
-
-" Navigation between results
-nmap <silent> <C-N> :cn<CR>zv
-nmap <silent> <C-P> :cp<CR>zv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -47,7 +38,7 @@ map <Leader>tv <C-w>t<C-w>K
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Quit
-nmap <leader>qs :q<CR>
+nmap <leader>qw :q<CR>
 imap <M-q> <esc>:q<CR>
 nmap <M-q> :q<CR>
 tmap <M-q> <esc>:q<CR>
@@ -59,7 +50,7 @@ nmap <M-S-q> :q!<CR>
 tmap <M-S-q> <esc>:q!<CR>
 
 """ Save
-nmap <leader>ww :w<CR>
+nmap <leader>fs :w<CR>
 
 """ Save and Quit
 nmap <leader>wq :wq<CR>
@@ -103,7 +94,7 @@ imap <S-Right> <Esc>v<Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ BUFFERS
-nmap <leader>ls :ls<CR>
+nmap <leader>bl :ls<CR>
 
 """ Goto Buffer
 nnoremap <M-S-b> :buffers<CR>:buffer<Space>
@@ -142,7 +133,9 @@ endfunction
 
 " Cycle buffers
 nnoremap <M-,> :call PrevBufferTab()<CR>
+nnoremap <leader>bp :call PrevBufferTab()<CR>
 nnoremap <M-.> :call NextBufferTab()<CR>
+nnoremap <leader>bn :call NextBufferTab()<CR>
 inoremap <M-,> <esc>:call PrevBufferTab()<CR>
 inoremap <M-.> <esc>:call NextBufferTab()<CR>
 tmap <M-,> <esc>:call PrevBufferTab()<CR>
@@ -179,17 +172,20 @@ imap <M-a> <home>
 imap <M-n> <end>
 cmap <M-a> <home>
 cmap <M-n> <end>
-nmap <leader>ee <end>
-nmap <leader>es <home>
-vmap <leader>ee <end>
-vmap <leader>es <home>
+nmap <leader>le <end>
+nmap <leader>ls <home>
+vmap <leader>le <end>
+vmap <leader>ls <home>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Control-S Save
+""" Controla-S Save
 nmap <C-S> :w<cr>
 vmap <C-S> <esc>:w<cr>
 imap <C-S> <esc>:w<cr>
+nmap <M-S> :w<cr>
+vmap <M-S> <esc>:w<cr>
+imap <M-S> <esc>:w<cr>
 " Save + back into insert
 " imap <C-S> <esc>:w<cr>a
 
@@ -214,12 +210,16 @@ map <leader>sh :split <CR>              " Horizontal
 
 """ Window Movement between splits
 nmap <M-h> <C-w>h
+nmap <leader>wh <C-w>h
 nmap <M-left> <C-w>h
 nmap <M-j> <C-w>j
+nmap <leader>wj <C-w>j
 nmap <M-down> <C-w>j
 nmap <M-k> <C-w>k
+nmap <leader>wk <C-w>k
 nmap <M-up> <C-w>k
 nmap <M-l> <C-w>l
+nmap <leader>wl <C-w>l
 nmap <M-right> <C-w>l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,10 +234,15 @@ nmap <M-=> <C-w>=
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Insert mode movement
+" Using Alt key
 imap <M-h> <left>
 imap <M-j> <down>
 imap <M-k> <up>
 imap <M-l> <right>
+
+" Using Ctrl key
+inoremap <C-k> <up>
+inoremap <C-j> <down>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -268,6 +273,10 @@ tnoremap <Esc> <C-\><C-n>
 """ Manually refresh file
 nmap <F5> :e!<cr>
 nmap <M-r> :e!<cr>
+nmap <leader>rf :e!<cr>
+
+""" Create new file
+nmap <leader>nf :e<space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -292,7 +301,9 @@ nnoremap <leader>so :so %<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Toggle Tagbar
-nnoremap <leader>tb :TagbarToggle<CR>
+""" Session Related Keybindings
+nnoremap <leader>ss :SSave<CR>
+nnoremap <leader>sd :SDelete<CR>
+nnoremap <leader>sl :SLoad<Space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " END " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
