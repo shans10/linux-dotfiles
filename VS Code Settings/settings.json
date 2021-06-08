@@ -24,7 +24,8 @@
         {
             "before": [
                 "leader",
-                "w"
+                "f",
+                "s"
             ],
             "commands": [
                 "workbench.action.files.save"
@@ -33,6 +34,7 @@
         {
             "before": [
                 "leader",
+                "f",
                 "o"
             ],
             "commands": [
@@ -42,7 +44,57 @@
         {
             "before": [
                 "leader",
-                "q"
+                "."
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "w",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.navigateDown"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "w",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.navigateUp"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "w",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.navigateRight"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "w",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.navigateLeft"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f",
+                "c"
             ],
             "commands": [
                 ":q"
@@ -51,6 +103,7 @@
         {
             "before": [
                 "leader",
+                "s",
                 "b"
             ],
             "commands": [
@@ -60,7 +113,8 @@
         {
             "before": [
                 "leader",
-                "a"
+                "a",
+                "b"
             ],
             "commands": [
                 "workbench.action.toggleActivityBarVisibility"
@@ -69,7 +123,8 @@
         {
             "before": [
                 "leader",
-                "e"
+                "e",
+                "x"
             ],
             "commands": [
                 "workbench.view.explorer"
@@ -78,7 +133,8 @@
         {
             "before": [
                 "leader",
-                "s"
+                "s",
+                "e"
             ],
             "commands": [
                 "workbench.view.search"
@@ -105,24 +161,6 @@
         {
             "before": [
                 "leader",
-                "n"
-            ],
-            "commands": [
-                "editor.action.marker.nextInFiles"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "p"
-            ],
-            "commands": [
-                "editor.action.marker.prevInFiles"
-            ]
-        },
-        {
-            "before": [
-                "leader",
                 "i",
                 "t"
             ],
@@ -138,6 +176,56 @@
             ],
             "commands": [
                 "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "s",
+                "m"
+            ],
+            "commands": [
+                "workbench.action.showAllEditorsByMostRecentlyUsed"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "s",
+                "g"
+            ],
+            "commands": [
+                "workbench.action.showEditorsInActiveGroup"
+            ]
+        },
+                {
+            "before": [
+                "leader",
+                "f",
+                "d"
+            ],
+            "commands": [
+                "actions.find"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f",
+                "n"
+            ],
+            "commands": [
+                "fileutils.newFile"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f",
+                "r"
+            ],
+            "commands": [
+                "fileutils.newFileAtRoot"
             ]
         },
         {
@@ -256,6 +344,14 @@
                     "command": "redo"
                 }
             ]
+        },
+        {
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ],
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -344,7 +440,7 @@
     "vim.showMarksInGutter": true,
     "workbench.editor.showTabs": false,
     "markdown.preview.fontSize": 13,
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.renderFinalNewline": false,
     "editor.scrollBeyondLastLine": false,
     "extensions.ignoreRecommendations": true,
@@ -357,5 +453,12 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell Core",
-    "editor.fontSize": 13
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "clangd.arguments": [
+        "-header-insertion=never"
+    ],
+    "explorer.confirmDelete": false,
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "workbench.activityBar.visible": false
 }

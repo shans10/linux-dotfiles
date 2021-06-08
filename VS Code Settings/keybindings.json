@@ -35,5 +35,79 @@
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "shift+alt+e",
+        "command": "workbench.action.problems.focus"
+    },
+    {
+        "key": "shift+alt+oem_4",
+        "command": "editor.action.marker.prevInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+oem_6",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+f8",
+        "command": "-editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+n",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+r",
+        "command": "workbench.action.tasks.test"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "workbench.action.tasks.build"
+    },
+    {
+        "key": "shift+alt+s",
+        "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+    },
+    {
+        "key": "shift+alt+g",
+        "command": "workbench.action.showEditorsInActiveGroup"
+    },
+    {
+        "key": "ctrl+alt+oem_5",
+        "command": "workbench.action.splitEditorOrthogonal"
+    },
+    {
+        "key": "ctrl+k ctrl+oem_5",
+        "command": "-workbench.action.splitEditorOrthogonal"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "fileutils.newFile"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "fileutils.newFileAtRoot"
     }
 ]
