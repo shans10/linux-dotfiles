@@ -3,12 +3,14 @@
     // Add custom actions and keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
     // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
-    "actions": [
+    "actions": 
+    [
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -28,7 +30,8 @@
         // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
         // To learn more about panes, visit https://aka.ms/terminal-panes
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -39,13 +42,16 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "profiles": {
+    "experimental.rendering.forceFullRepaint": false,
+    "profiles": 
+    {
         "defaults": {},
-        "list": [
+        "list": 
+        [
             {
                 "acrylicOpacity": 0.81000000000000005,
                 "bellStyle": "none",
-                "colorScheme": "Blue Matrix",
+                "colorScheme": "Argonaut",
                 "commandline": "pwsh -nologo",
                 "cursorShape": "filledBox",
                 "fontFace": "CaskaydiaCove NF",
@@ -91,18 +97,17 @@
             },
             {
                 "acrylicOpacity": 0.81000000000000005,
-                "bellStyle": "none",
-                "colorScheme": "Dracula",
+                "colorScheme": "One Half Dark",
                 "cursorShape": "filledBox",
                 "fontFace": "CaskaydiaCove NF",
                 "fontSize": 10,
-                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
+                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
                 "hidden": false,
-                "icon": "C:\\Users\\shant\\Pictures\\Windows Terminal Icons\\alpine.png",
-                "name": "Alpine",
+                "icon": "C:\\Users\\shant\\Pictures\\Windows Terminal Icons\\kali.png",
+                "name": "Kali Linux",
                 "scrollbarState": "hidden",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Alpine/home/alpine",
+                "startingDirectory": "\\\\wsl$\\kali-linux\\home\\kali",
                 "useAcrylic": true
             },
             {
@@ -124,7 +129,7 @@
             {
                 "acrylicOpacity": 0.81000000000000005,
                 "bellStyle": "none",
-                "colorScheme": "Argonaut",
+                "colorScheme": "Dracula",
                 "commandline": "pwsh.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 61952bd8}\"",
                 "cursorShape": "filledBox",
                 "fontFace": "CaskaydiaCove NF",
@@ -139,7 +144,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0E1019",
             "black": "#232323",

@@ -8,7 +8,6 @@ if empty(glob('C:/Users/shant/AppData/Local/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('C:/Users/shant/nvim/plugged')
-Plug 'neoclide/coc.nvim',               { 'branch': 'release' }
 Plug 'tpope/vim-commentary',            { 'on': '<Plug>Commentary' }
 Plug 'lambdalisue/suda.vim'
 Plug 'machakann/vim-highlightedyank'
@@ -36,7 +35,6 @@ autocmd VimEnter *
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Sourcing the plugins configuration files
-source C:/Users/shant/AppData/Local/nvim/plug-configs/coc.vim                          " coc
 source C:/Users/shant/AppData/Local/nvim/plug-configs/startify.vim                     " startify
 source C:/Users/shant/AppData/Local/nvim/plug-configs/vim-commentary.vim               " vim-commentary
 source C:/Users/shant/AppData/Local/nvim/plug-configs/suda.vim                         " suda

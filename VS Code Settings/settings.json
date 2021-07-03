@@ -1,6 +1,5 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "errorLens.addNumberOfDiagnostics": true,
     "editor.fontFamily": "'Cascadia Code', 'Hack NF'",
     "window.titleBarStyle": "custom",
     "errorLens.gutterIconsEnabled": true,
@@ -48,6 +47,16 @@
             ],
             "commands": [
                 "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "c",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
             ]
         },
         {
@@ -103,8 +112,8 @@
         {
             "before": [
                 "leader",
-                "s",
-                "b"
+                "b",
+                "s"
             ],
             "commands": [
                 "workbench.action.toggleSidebarVisibility"
@@ -113,8 +122,8 @@
         {
             "before": [
                 "leader",
-                "a",
-                "b"
+                "b",
+                "a"
             ],
             "commands": [
                 "workbench.action.toggleActivityBarVisibility"
@@ -181,7 +190,7 @@
         {
             "before": [
                 "leader",
-                "s",
+                "e",
                 "m"
             ],
             "commands": [
@@ -191,14 +200,14 @@
         {
             "before": [
                 "leader",
-                "s",
+                "e",
                 "g"
             ],
             "commands": [
                 "workbench.action.showEditorsInActiveGroup"
             ]
         },
-                {
+        {
             "before": [
                 "leader",
                 "f",
@@ -271,7 +280,8 @@
         {
             "before": [
                 "<Leader>",
-                "i"
+                "i",
+                "n"
             ],
             "after": [
                 "g",
@@ -358,7 +368,8 @@
         {
             "before": [
                 "<Leader>",
-                "i"
+                "i",
+                "n"
             ],
             "after": [
                 "g",
@@ -428,7 +439,7 @@
     "files.trimTrailingWhitespace": true,
     "errorLens.followCursor": "closestProblem",
     "workbench.editor.highlightModifiedTabs": true,
-    "editor.cursorSurroundingLines": 9,
+    "editor.cursorSurroundingLines": 15,
     "vim.enableNeovim": true,
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.duration": 300,
@@ -438,10 +449,8 @@
     "errorLens.statusBarMessageEnabled": true,
     "vim.smartRelativeLine": true,
     "vim.showMarksInGutter": true,
-    "workbench.editor.showTabs": false,
     "markdown.preview.fontSize": 13,
     "editor.fontLigatures": false,
-    "editor.renderFinalNewline": false,
     "editor.scrollBeyondLastLine": false,
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.profiles.windows": {
@@ -453,12 +462,31 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell Core",
-    "editor.fontSize": 13,
-    "terminal.integrated.fontSize": 13,
     "clangd.arguments": [
         "-header-insertion=never"
     ],
     "explorer.confirmDelete": false,
-    "C_Cpp.intelliSenseEngine": "Disabled",
-    "workbench.activityBar.visible": false
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.renderWhitespace": "trailing",
+    "search.exclude": {
+        "**/__pycache__": true,
+        "**/.env": true,
+        "**/.git": true,
+        "**/env": true
+    },
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.vscode": true,
+        "**/env": true
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Community Material Theme High Contrast",
+    "editor.renderFinalNewline": false,
+    "files.autoSave": "onFocusChange",
+    "terminal.external.windowsExec": "C:\\Users\\shant\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+    "errorLens.messageTemplate": "[$count] $message",
 }

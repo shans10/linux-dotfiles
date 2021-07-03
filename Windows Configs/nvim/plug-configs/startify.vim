@@ -28,19 +28,11 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 
-let g:webdevicons_enable_startify = 1
-
-function! StartifyEntryFormat()
-        return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-    endfunction
-
 let g:startify_bookmarks = [
             \ { 'p': 'C:/Users/shant/AppData/Local/nvim/plugins.vim' },
             \ { 'i': 'C:/Users/shant/AppData/Local/nvim/init.vim' },
             \ { 'c': 'C:/Users/shant/AppData/Local/nvim/plug-configs' },
             \ { 'x': 'D:/Programming/CS50X' },
-            \ { 'a': 'D:/Programming/Algorithms' },
-            \ { 'P': 'D:/Programming/Python' },
             \ ]
 
 let g:startify_enable_special = 0

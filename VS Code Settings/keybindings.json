@@ -109,5 +109,23 @@
     {
         "key": "ctrl+alt+p",
         "command": "fileutils.newFileAtRoot"
+    },
+    {
+        "key": "shift+alt+enter k",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "shift+alt+enter n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported"
+    },
+    {
+        "key": "shift+alt+enter j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "shift+alt+enter e",
+        "command": "workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
 ]
